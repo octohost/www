@@ -1,8 +1,6 @@
-harp
+www
 ====
 
-Basic [Harp Platform](https://www.harp.io/) container for octohost.
+Main website for the [octohost project](http://www.octohost.io).
 
-Clone this repo and use the Harp Platform to develop your website.
-
-Push this repo to your octohost - it will be live.
+Built using the [Harp Platform](https://www.harp.io/).
