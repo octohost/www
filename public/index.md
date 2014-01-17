@@ -1,6 +1,6 @@
 ## What is octohost?
 
-Simple web focused [Docker](http://www.docker.io) based mini-PaaS server. - git push to deploy your websites as needed.
+Simple web focused [Docker](http://www.docker.io) based mini-PaaS server. `git push` to deploy your websites as needed.
 
 ## What is it used for?
 
