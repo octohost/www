@@ -3,6 +3,6 @@
     "title": "octohost",
     "name"  : "Darron Froese",
     "uri": "http://www.octohost.io",
-    "description": "Super simple web focused, Docker based mini-PaaS."
+    "description": "Simple web focused Docker based mini-PaaS server."
   }
 }

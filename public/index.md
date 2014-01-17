@@ -1,11 +1,25 @@
 ## What is octohost?
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Simple web focused [Docker](http://www.docker.io) based mini-PaaS server. - git push to deploy your websites as needed.
 
-## What is it good for?
+## What is it used for?
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Hosting any web site required by adding a Dockerfile to your app's source repository.
 
-## How do I get it?
+## What languages are supported?
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+We have 10 languages supported already, and many frameworks. Detailed information [available here](/languages.html).
+
+## How do I use it?
+
+There are several ways to get it:
+
+1. An already prepared [Vagrant box](https://github.com/octohost/octovagrant). With [integrated wildcard dns](http://octodev.io) for easy reference.
+
+2. An [Amazon AMI](https://github.com/octohost/octohost).
+
+3. Build your own using [Packer](http://www.packer.io) and a set of [Chef cookbooks](https://github.com/octohost/octohost-cookbook).
+
+4. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
+
+## Any questions?
