@@ -1,0 +1,15 @@
+html {
+}
+
+/* Octo-Blue */
+.theme-base-0g .sidebar {
+  background-color: #0099bb;
+  background-image: url('/images/small-octo-white-35.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: top;
+}
+.theme-base-0g .content a,
+.theme-base-0g .related-posts li a:hover {
+  color: #0099bb;
+}
