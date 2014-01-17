@@ -1,9 +1,9 @@
 {
   "name": "Harp",
   "version": "1.0.0",
-  "description": "A Harp App on Docker",
+  "description": "A Harp App on octohost",
   "dependencies": {
-    "harp": "0.8.x"
+    "harp": "0.11.x"
   },
   "engines": {
     "node": "0.10.x",
