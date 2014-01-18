@@ -13,3 +13,8 @@ html {
 .theme-base-0g .related-posts li a:hover {
   color: #0099bb;
 }
+
+.src {
+  text-align: right;
+  font-size: 14px;
+}
