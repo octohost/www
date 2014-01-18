@@ -6,7 +6,7 @@
 4. [Python](https://github.com/octohost/python-3.3)
 5. [Go](https://github.com/octohost/go-1.2) - [1.2](https://github.com/octohost/go-1.2), [Web.go](https://github.com/octohost/web.go), [Revel](https://github.com/octohost/revel), [martini](https://github.com/octohost/martini)
 6. [Lua](https://github.com/octohost/openresty)
-7. [Java](https://github.com/octohost/openjdk7)
+7. [Java](https://github.com/octohost/openjdk7) - [Play Framework](https://github.com/octohost/play-app)
 8. Clojure - [leiningen](https://github.com/octohost/leiningen), [hoplon](https://github.com/octohost/hoplon)
 9. [Erlang](https://github.com/octohost/erlang)
 10. [Perl](https://github.com/octohost/perl) - [Mojolicious](https://github.com/octohost/mojolicious-app), [Perl Dancer](https://github.com/octohost/perldancer-app)
