@@ -10,6 +10,7 @@
 8. Clojure - [leiningen](https://github.com/octohost/leiningen), [hoplon](https://github.com/octohost/hoplon)
 9. [Erlang](https://github.com/octohost/erlang)
 10. [Perl](https://github.com/octohost/perl) - [Mojolicious](https://github.com/octohost/mojolicious-app), [Perl Dancer](https://github.com/octohost/perldancer-app)
+11. [Static HTML](https://github.com/octohost/html) - served with nginx
 
 Most base images can be downloaded from the [Docker INDEX](https://index.docker.io/u/octohost/).
 
