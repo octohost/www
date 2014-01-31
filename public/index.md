@@ -16,10 +16,14 @@ There are several ways to get it:
 
 1. An already prepared [Vagrant box](https://github.com/octohost/octovagrant). With [integrated wildcard dns](http://octodev.io) for easy reference.
 
-2. An [Amazon AMI](https://github.com/octohost/octohost).
+2. An [Amazon AMI](https://github.com/octohost/octohost-cookbook).
 
-3. Build your own using [Packer](http://www.packer.io) and a set of [Chef cookbooks](https://github.com/octohost/octohost-cookbook).
+3. Digital Ocean [Droplet](https://github.com/octohost/octohost-cookbook)
 
-4. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
+4. Rackspace [OpenStack Image](https://github.com/octohost/octohost-cookbook)
+
+5. Build your own somewhere else using [Packer](http://www.packer.io) and a set of [Chef cookbooks](https://github.com/octohost/octohost-cookbook).
+
+6. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
 
 ## Any questions?
