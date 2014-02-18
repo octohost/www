@@ -17,6 +17,14 @@ To make this happen, we will utilize 3 containers in total:
 2. Redis application container that uses the volume from #1 to persist the data between container upgrades.
 3. The web application container that is linked to the Redis application container.
 
+We use a simple naming convention to make the linking and volume sharing easier:
+
+1. appname\_datastore\_data - for the data storage container.
+2. appname\_datastore - for the storage daemon.
+3. appname - for the actual web application that links to the storage daemon.
+
+This way - we always know what container name we're looking for when we're linking them up.
+
 First, let's create the [data](http://www.tech-d.net/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/) [only](http://www.offermann.us/2013/12/tiny-docker-pieces-loosely-joined.html) container.
 
 Here's the Dockerfile:
@@ -25,7 +33,6 @@ Here's the Dockerfile:
 FROM          busybox
 VOLUME        ["/var/lib/redis"]
 CMD           ["true"]
-
 # NO_HTTP_PROXY
 # ADD_A_NAME
 ```
@@ -39,7 +46,7 @@ When that's pushed - you should see this:
 
 ```
 [master] darron@~/Desktop/octo-data/darron_redis_data: git remote add dev git@server.octodev.io:darron_redis_data.git
-[master] darron@~/Desktop/octo-data/darron_redis_data: gp dev master
+[master] darron@~/Desktop/octo-data/darron_redis_data: git push dev master
 Warning: remote port forwarding failed for listen port 52698
 Counting objects: 6, done.
 Delta compression using up to 4 threads.
@@ -69,13 +76,10 @@ The data container is complete  - let's add the Redis application container:
 
 ```
 FROM octohost/redis
-
 EXPOSE 6379
-
 # NO_HTTP_PROXY
 # ADD_A_NAME
 # VOLUMES_FROM
-
 CMD ["/usr/bin/redis-server"]
 ```
 
@@ -132,5 +136,15 @@ To git@server.octodev.io:darron_redis.git
  
  Now let's link up the final application container - here's the Dockerfile:
  
+ ```
+ FROM octohost/ruby-1.9
+ ADD . /srv/www
+ RUN cd /srv/www; bundle install --deployment --without test development
+ # LINK_DATA redis
+ EXPOSE 5000
+ CMD ["/usr/local/bin/foreman","start","-d","/srv/www"]
+ ```
  
+ There's only 1 special comment in this Dockerfile. 
  
+ On push, octohost links this container to the Redis container we created in step 2.
