@@ -1,5 +1,12 @@
 ## Changelog
 
+## 0.8.1 - unreleased
+
+* Update to Docker 0.8.1.
+* Sped up all sorts of containers using nginx and static content.
+* Looking at replacing Hipache with nginx. Work in progress - likely not for this release.
+* Working on a way to setup, provision and link persistent data stores to your pushed applications. [More detail here](/data-stores.html). Still experimental.
+
 ## 0.8 - ami-2a80e31a
 
 * Add container [memory usage](https://github.com/octohost/octohost/commit/4e9276d8ea2efa7e0203637ef86f15e5a5fe542d) to `octo status` listing.
