@@ -47,30 +47,30 @@ The last two lines are important, they tell the [receiver script](https://github
 When that's pushed - you should see this:
 
 ```
-[master] darron@~/Desktop/octo-data/darron_redis_data: git remote add dev git@server.octodev.io:darron_redis_data.git
-[master] darron@~/Desktop/octo-data/darron_redis_data: git push dev master
+[master] darron@/data: git remote add octo git@server.octohost.io:testing_redis_data.git
+[master] darron@/data: gp octo master
 Warning: remote port forwarding failed for listen port 52698
-Counting objects: 6, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (6/6), 522 bytes | 0 bytes/s, done.
-Total 6 (delta 1), reused 0 (delta 0)
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
 remote: Put repo in src format somewhere.
 remote: Building Docker image.
-remote: Base: darron_redis_data
+remote: Base: testing_redis_data
 remote: Nothing running - no need to look for a port.
 remote: Uploading context  2.56 kB
 remote: Uploading context 
 remote: Step 0 : FROM          busybox
 remote:  ---> 769b9341d937
 remote: Step 1 : VOLUME        ["/var/lib/redis"]
-remote:  ---> Using cache
-remote:  ---> b463cd3af8c3
+remote:  ---> Running in fedc60e7bec5
+remote:  ---> 5a03e36a4866
 remote: Step 2 : CMD           ["true"]
-remote:  ---> Using cache
-remote:  ---> 5aa41fe755f9
-remote: Successfully built 5aa41fe755f9
-To git@server.octodev.io:darron_redis_data.git
+remote:  ---> Running in f0ba0503a3c6
+remote:  ---> dcb61d3a1cf7
+remote: Successfully built dcb61d3a1cf7
+To git@server.octohost.io:testing_redis_data.git
  * [new branch]      master -> master
 ```
 
@@ -94,49 +94,38 @@ Like the data container, there are a few important commented items at the end of
 Here's what happens on the push:
 
 ```
-[master] darron@~/Desktop/octo-data/darron_redis: git remote add dev git@server.octodev.io:darron_redis.git
-[master] darron@~/Desktop/octo-data/darron_redis: git push dev master
+[master] darron@/server: git remote add octo git@server.octohost.io:testing_redis.git
+[master] darron@/server: gp octo master
 Warning: remote port forwarding failed for listen port 52698
-Counting objects: 15, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (10/10), done.
-Writing objects: 100% (15/15), 1.21 KiB | 0 bytes/s, done.
-Total 15 (delta 4), reused 0 (delta 0)
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 310 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
 remote: Put repo in src format somewhere.
 remote: Building Docker image.
-remote: Base: darron_redis
+remote: Base: testing_redis
 remote: Nothing running - no need to look for a port.
 remote: Uploading context  2.56 kB
 remote: Uploading context 
 remote: Step 0 : FROM octohost/redis
 remote:  ---> 4e23407f3917
 remote: Step 1 : EXPOSE 6379
-remote:  ---> Running in 958ac09acc36
-remote:  ---> 2a5c3ff1355e
+remote:  ---> Running in 63558f94ef39
+remote:  ---> 7005893a2eb5
 remote: Step 2 : CMD ["/usr/bin/redis-server"]
-remote:  ---> Running in b8f4195ab936
-remote:  ---> a19c53c1abba
-remote: Successfully built a19c53c1abba
-remote: Port: 49153
-To git@server.octodev.io:darron_redis.git
+remote:  ---> Running in a85c9ceee561
+remote:  ---> 778ee46b9697
+remote: Successfully built 778ee46b9697
+remote: Port: 49240
+To git@server.octohost.io:testing_redis.git
  * [new branch]      master -> master
+
  ```
  
- We've provisioned a Redis server and it's ready to go.
- 
- ```
- [master] darron@~/Desktop/octo-data/darron_redis: redis-cli -h server.octodev.io -p 49153
- server.octodev.io:49153> SET 1 "This is a test."
- OK
- server.octodev.io:49153> SET 2 "octohost is pretty fun."
- OK
- server.octodev.io:49153> GET 1
- "This is a test."
- server.octodev.io:49153> GET 2
- "octohost is pretty fun."
- ```
- 
- Now let's link up the final application container - here's the Dockerfile:
+We've provisioned a Redis server and it's ready to go.
+
+Now let's link up the final application container - here's the Dockerfile:
  
  ```
  FROM octohost/ruby-1.9
@@ -147,12 +136,10 @@ To git@server.octodev.io:darron_redis.git
  CMD ["/usr/local/bin/foreman","start","-d","/srv/www"]
  ```
  
- There's only 1 special comment in this Dockerfile. 
- 
- On push, octohost links this container to the Redis container we created in step 2. Let's try it:
+There's only 1 special comment in this Dockerfile - on push, octohost links this container to the Redis container we created in step 2. Let's try it:
  
  ```
- [master] darron@~/Dropbox/src/octovagrant/redis_docs/app: git push octo master
+ [master] darron@/app: git push octo master
  Warning: remote port forwarding failed for listen port 52698
  Counting objects: 9, done.
  Delta compression using up to 8 threads.
@@ -206,8 +193,8 @@ And here's the live site - with a Redis INCR counter: [http://testing.octohost.i
 
 3 pushes - 3 containers:
 
-1. Data only container.
-2. Redis container running and using #1 for data storage.
-3. Small Sinatra app linked to the Redis container.
+1. [Data only container.](https://github.com/octohost/redis_data)
+2. [Redis container running and using #1 for data storage.](https://github.com/octohost/redis_container)
+3. [Small Sinatra app linked to the Redis container.](https://github.com/octohost/redis_app)
 
 Take a look at the Sinatra code here: [https://github.com/octohost/redis_app](https://github.com/octohost/redis_app)
