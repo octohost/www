@@ -69,6 +69,7 @@ The data container is complete  - let's add the Redis application container:
 
 ```
 FROM octohost/redis
+WORKDIR /var/lib/redis
 EXPOSE 6379
 # NO_HTTP_PROXY
 # ADD_NAME
