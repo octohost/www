@@ -11,6 +11,8 @@ We want to make several data stores available through linked Docker containers:
 
 Adding a Redis data store to an octohost website.
 
+*TLDR: 3 git pushes - three linked single use containers.*
+
 To make this happen, we will utilize 3 containers in total:
 
 1. Data only container to store the Redis dump.rdb file.
@@ -147,4 +149,65 @@ To git@server.octodev.io:darron_redis.git
  
  There's only 1 special comment in this Dockerfile. 
  
- On push, octohost links this container to the Redis container we created in step 2.
+ On push, octohost links this container to the Redis container we created in step 2. Let's try it:
+ 
+ ```
+ [master] darron@~/Dropbox/src/octovagrant/redis_docs/app: git push octo master
+ Warning: remote port forwarding failed for listen port 52698
+ Counting objects: 9, done.
+ Delta compression using up to 8 threads.
+ Compressing objects: 100% (6/6), done.
+ Writing objects: 100% (9/9), 1.09 KiB | 0 bytes/s, done.
+ Total 9 (delta 0), reused 0 (delta 0)
+ remote: Put repo in src format somewhere.
+ remote: Building Docker image.
+ remote: Base: testing
+ remote: Nothing running - no need to look for a port.
+ remote: Uploading context 8.192 kB
+ remote: Uploading context 
+ remote: Step 0 : FROM octohost/ruby-1.9
+ remote:  ---> 9bc0da4bad25
+ remote: Step 1 : ADD . /srv/www
+ remote:  ---> e0ebe5e4cb78
+ remote: Step 2 : RUN cd /srv/www; bundle install --deployment --without test development
+ remote:  ---> Running in ee460166f37a
+ remote: Fetching gem metadata from https://rubygems.org/..........
+ remote: Fetching gem metadata from https://rubygems.org/..
+ remote: Installing dotenv (0.9.0) 
+ remote: Installing thor (0.18.1) 
+ remote: Installing foreman (0.63.0) 
+ remote: Installing rack (1.5.2) 
+ remote: Installing rack-protection (1.5.2) 
+ remote: Installing redis (3.0.6) 
+ remote: Installing tilt (1.4.1) 
+ remote: Installing sinatra (1.4.4) 
+ remote: Using bundler (1.3.5) 
+ remote: Your bundle is complete!
+ remote: Gems in the groups test and development were not installed.
+ remote: It was installed into ./vendor/bundle
+ remote:  ---> b947b5e625bc
+ remote: Step 3 : EXPOSE 5000
+ remote:  ---> Running in d144ac1800c5
+ remote:  ---> 3a4c2ffc1538
+ remote: Step 4 : CMD ["/usr/local/bin/foreman","start","-d","/srv/www"]
+ remote:  ---> Running in 1998c2793974
+ remote:  ---> 0e4f5afbad3e
+ remote: Successfully built 0e4f5afbad3e
+ remote: Adding http://testing.54.244.116.169.xip.io
+ remote: Adding http://testing.octohost.io
+ remote: Not killing any containers.
+ remote: Your site is available at: http://testing.54.244.116.169.xip.io
+ remote: Your site is available at: http://testing.octohost.io
+ To git@server.octohost.io:testing.git
+  * [new branch]      master -> master
+```
+
+And here's the live site - with a Redis INCR counter: [http://testing.octohost.io/](http://testing.octohost.io/)
+
+3 pushes - 3 containers:
+
+1. Data only container.
+2. Redis container running and using #1 for data storage.
+3. Small Sinatra app linked to the Redis container.
+
+Take a look at the Sinatra code here: [https://github.com/octohost/redis_app](https://github.com/octohost/redis_app)
