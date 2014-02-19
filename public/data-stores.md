@@ -1,5 +1,8 @@
 ## Data Stores
 
+### NOTE: This is still unreleased.
+#### Please send feedback to [Darron](mailto:darron@froese.org)
+
 We want to make several data stores available through linked Docker containers:
 
 1. [Redis](/data-stores-redis.html) - working now.
