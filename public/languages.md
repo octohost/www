@@ -11,6 +11,7 @@
 9. [Erlang](https://github.com/octohost/erlang)
 10. [Perl](https://github.com/octohost/perl) - [Mojolicious](https://github.com/octohost/mojolicious-app), [Perl Dancer](https://github.com/octohost/perldancer-app)
 11. Static HTML - [HTML](https://github.com/octohost/html) - also - Harp, Jekyll, Middleman and Octopress are all served statically with nginx.
+12. [Mono](https://github.com/octohost/mono)
 
 ### Data Stores
 
