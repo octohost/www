@@ -1,5 +1,4 @@
 ## Data Stores
-
 ### NOTE: This is still unreleased.
 #### Please send feedback to [Darron](mailto:darron@froese.org)
 
