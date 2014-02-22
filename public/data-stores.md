@@ -4,9 +4,9 @@
 
 We want to make several data stores available through linked Docker containers:
 
-1. [Redis](/data-stores-redis.html) - working now.
+1. [Redis](/data-stores-redis.html) - [Example here.](http://redis.octohost.io)
 2. MySQL - in progress.
-3. Memcached
+3. [Memcached](/data-stores-memcached.html) - [Example here.](http://memcached.octohost.io)
 4. PostgreSQL
 
 ### We have added some "magic" Dockerfile comments.

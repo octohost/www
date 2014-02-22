@@ -183,7 +183,7 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
   * [new branch]      master -> master
 ```
 
-And here's the live site - with a Redis INCR counter: [http://testing.octohost.io/](http://testing.octohost.io/)
+And here's the live site - with a Redis INCR counter: [http://redis.octohost.io/](http://redis.octohost.io/)
 
 3 pushes - 3 containers:
 
