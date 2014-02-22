@@ -15,8 +15,8 @@
 
 ### Data Stores
 
-1. [Redis](https://github.com/octohost/redis) - work in progress.
-2. Memcached - on the radar.
+1. [Redis](/data-stores-redis.html) - [Container here](https://github.com/octohost/redis).
+2. [Memcached](/data-stores-memcached.html) - [Container here](https://github.com/octohost/memcached).
 3. MySQL - on the radar.
 4. PostgreSQL - on the radar.
 
