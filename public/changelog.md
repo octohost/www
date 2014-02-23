@@ -1,11 +1,12 @@
 ## Changelog
 
-## 0.8.1 - unreleased
+## 0.8.1 - coming soon
 
 * Update to Docker 0.8.1.
 * Sped up all sorts of containers using nginx and static content.
 * Looking at replacing Hipache with nginx. Work in progress - likely not for this release.
-* Working on a way to setup, provision and link persistent data stores to your pushed applications. [More detail here](/data-stores.html). Still experimental.
+* Working on a way to setup, provision and link a persistent data store to your pushed applications with "magic comments" in your Dockerfile. [More detail here](/data-stores.html). [Redis](/data-stores-redis.html) and [Memcached](/data-stores-memcached.html) are working. Still very experimental.
+* Make `octo clean` [not remove](https://github.com/octohost/octohost/commit/ba875ccfb55110409da69c718b7cb94edde3b55c) stopped "\_data" containers.
 
 ## 0.8 - ami-2a80e31a
 
