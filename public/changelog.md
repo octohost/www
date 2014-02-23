@@ -1,6 +1,6 @@
 ## Changelog
 
-## 0.8.1 - coming soon
+## 0.8.1 - ami-68dcb158
 
 * Update to Docker 0.8.1.
 * Sped up all sorts of containers using nginx and static content.
