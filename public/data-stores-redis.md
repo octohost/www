@@ -1,5 +1,5 @@
 ## Redis on octohost
-### NOTE: This is still unreleased.
+### NOTE: Released at 0.8.1.
 #### Please send feedback to [Darron](mailto:darron@froese.org)
 
 Adding a Redis data store to an octohost website.

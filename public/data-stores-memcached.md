@@ -1,5 +1,5 @@
 ## Memcached on octohost
-### NOTE: This is still unreleased.
+### NOTE: Released at 0.8.1.
 #### Please send feedback to [Darron](mailto:darron@froese.org)
 
 Adding a Memcached data store to an octohost website.
