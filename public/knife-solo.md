@@ -24,3 +24,13 @@ cookbook 'gitreceive', git: 'https://github.com/darron/gitreceive-cookbook.git'
 5. `echo '{"run_list":["octohost::default"]}' > nodes/YOUR.SERVER.IP.json`
 6. Edit the `site-cookbooks/octohost/user-data-file/setup`. Make sure to run these commands after the build.
 7. Run `knife solo bootstrap user@myip.com`
+8. Once it's done, you'll need to add your keys to the git user: `cat ~/.ssh/id_rsa.pub | ssh root@IP "sudo gitreceive upload-key your-name-here"`
+
+After that's setup - you can start to push sites to your octohost:
+
+```
+git clone https://github.com/octohost/harp.git
+cd harp
+git remote add octohost git@IP:harp.git
+git push octohost master
+```
