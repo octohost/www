@@ -22,5 +22,5 @@ cookbook 'gitreceive', git: 'https://github.com/darron/gitreceive-cookbook.git'
 ```
 
 5. `echo '{"run_list":["octohost::default"]}' > nodes/YOUR.SERVER.IP.json`
-6. Edit the `site-cookbooks/octohost/user-data-file/setup`
+6. Edit the `site-cookbooks/octohost/user-data-file/setup`. Make sure to run these commands after the build.
 7. Run `knife solo bootstrap user@myip.com`
