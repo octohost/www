@@ -1,5 +1,7 @@
 ## Install via Chef-Solo
 
+Contributed by [Steffen Müller](https://github.com/steffenmllr)
+
 1. Install [Knife Solo](http://matschaffer.github.io/knife-solo/)
 2. `knife solo init myPaas && cd myPaas`
 3. `git clone https://github.com/octohost/octohost-cookbook.git site-cookbooks/octohost`
