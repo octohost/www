@@ -1,7 +1,5 @@
 ## octo cli
 
-### NOTE: A little outdated as of February 9, 2014 - but basically accurate.
-
 Added in v0.4 - the octo cli can help with:
 
 1. Showing status of containers you've pushed.
@@ -10,7 +8,7 @@ Added in v0.4 - the octo cli can help with:
 
 For example:
 
-1\. /usr/bin/octo status:
+1\. `/usr/bin/octo status`:
 
 ```
 harp: OK
@@ -24,7 +22,7 @@ web.go: OK
 www: OK
 ```
 
-2\. /usr/bin/octo restart sinatra
+2\. `/usr/bin/octo restart sinatra`:
 
 ```
 Restarting sinatra.
@@ -40,14 +38,14 @@ Step 3 : RUN cd /srv/www; bundle install
  ---> Running in 09098d33afbe
 Fetching gem metadata from https://rubygems.org/..........
 Fetching gem metadata from https://rubygems.org/..
-Using dotenv (0.9.0) 
-Using thor (0.18.1) 
-Using foreman (0.63.0) 
-Installing rack (1.5.2) 
-Installing rack-protection (1.5.1) 
-Installing tilt (1.4.1) 
-Installing sinatra (1.4.4) 
-Using bundler (1.3.5) 
+Using dotenv (0.9.0)
+Using thor (0.18.1)
+Using foreman (0.63.0)
+Installing rack (1.5.2)
+Installing rack-protection (1.5.1)
+Installing tilt (1.4.1)
+Installing sinatra (1.4.4)
+Using bundler (1.3.5)
 Your bundle is complete!
 Use `bundle show [gemname]` to see where a bundled gem is installed.
  ---> 4286bd625ca8
@@ -66,7 +64,7 @@ b373bee10efe
 Your site is available at: http://sinatra.at-a-server.io
 ```
 
-3\. /usr/bin/octo clean
+3\. `/usr/bin/octo clean`:
 
 ```
 Cleaning old exited containers.
@@ -77,18 +75,18 @@ e865dd7d7dca
 b373bee10efe
 Showining all remaining containers.
 CONTAINER ID        IMAGE                        COMMAND                CREATED              STATUS              PORTS                                               NAMES
-dc5e1d961230        octohost/sinatra:latest      /usr/local/bin/forem   About a minute ago   Up About a minute   0.0.0.0:49167->5000/tcp                             purple_shark        
-6e8d65bef177        octohost/revel:latest        /bin/sh -c revel run   18 hours ago         Up 18 hours         0.0.0.0:49165->9000/tcp                             purple_dog          
-cc5f8debd9ca        octohost/martini:latest      /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49164->3000/tcp                             white_koala         
-fd1b2884ccc7        octohost/web.go:latest       /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49163->9999/tcp                             orange_horse        
-86a3d795426d        octohost/harp:latest         /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49162->5000/tcp                             brown_octopus9      
-c221106f78c7        octohost/middleman:latest    /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49160->4567/tcp                             red_duck            
-27cce081bee0        octohost/php5-nginx:latest   /bin/sh -c service p   18 hours ago         Up 18 hours         0.0.0.0:49159->80/tcp                               fuchsia_horse       
-8cc0a2ea686f        octohost/octopress:latest    /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49158->4000/tcp                             olive_lemur         
-bdffdd3fbce1        octohost/www:latest          /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49156->5000/tcp                             lime_spider         
-b3fc849ec1f8        shipyard/shipyard:latest     /opt/apps/shipyard/.   19 hours ago         Up 19 hours         0.0.0.0:8000->8000/tcp, 443/tcp, 6379/tcp, 80/tcp   red_spider          
+dc5e1d961230        octohost/sinatra:latest      /usr/local/bin/forem   About a minute ago   Up About a minute   0.0.0.0:49167->5000/tcp                             purple_shark
+6e8d65bef177        octohost/revel:latest        /bin/sh -c revel run   18 hours ago         Up 18 hours         0.0.0.0:49165->9000/tcp                             purple_dog
+cc5f8debd9ca        octohost/martini:latest      /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49164->3000/tcp                             white_koala
+fd1b2884ccc7        octohost/web.go:latest       /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49163->9999/tcp                             orange_horse
+86a3d795426d        octohost/harp:latest         /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49162->5000/tcp                             brown_octopus9
+c221106f78c7        octohost/middleman:latest    /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49160->4567/tcp                             red_duck
+27cce081bee0        octohost/php5-nginx:latest   /bin/sh -c service p   18 hours ago         Up 18 hours         0.0.0.0:49159->80/tcp                               fuchsia_horse
+8cc0a2ea686f        octohost/octopress:latest    /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49158->4000/tcp                             olive_lemur
+bdffdd3fbce1        octohost/www:latest          /bin/sh -c cd /srv/w   18 hours ago         Up 18 hours         0.0.0.0:49156->5000/tcp                             lime_spider
+b3fc849ec1f8        shipyard/shipyard:latest     /opt/apps/shipyard/.   19 hours ago         Up 19 hours         0.0.0.0:8000->8000/tcp, 443/tcp, 6379/tcp, 80/tcp   red_spider
 ```
-4\. /usr/bin/octo remove sinatra
+4\. `/usr/bin/octo remove sinatra`:
 
 ```
 root@octohost:~# /usr/bin/octo remove sinatra
@@ -97,11 +95,47 @@ d2dcefd53f64
 Removed running conainter.
 ```
 
-5\. /usr/bin/octo move sites ip.address.here
+5\. `/usr/bin/octo move sites ip.address.here`:
 
 As long as you have ssh access to the other server, you can pull all the git repos over and relaunch all of the active sites.
 
-v0.5 supports SSH Agent Forwarding - to forward your agent - in your ~/.ssh/config file:
+6\. `/usr/bin/octo config canary`:
+
+```
+octohost:/home/git# octo config canary
+/canary/SESSION_SECRET:long-random-looking-string-that-will-not-be-posted
+/canary/SENDGRID_PASSWORD:not-the-password
+/canary/SENDGRID_USERNAME:not-the-username@example.com
+/canary/EMAIL_DESTINATION:not-the-email-address@example.com
+/canary/RACK_ENV:production
+/canary/LANG:en_US.UTF-8
+/canary/BASE_CANARY_PATH:octo
+octohost:/home/git# octo config:set canary/TESTING "This is only a test."
+This is only a test.
+octohost:/home/git# octo config canary
+/canary/SESSION_SECRET:long-random-looking-string-that-will-not-be-posted
+/canary/SENDGRID_PASSWORD:not-the-password
+/canary/SENDGRID_USERNAME:not-the-username@example.com
+/canary/EMAIL_DESTINATION:not-the-email-address@example.com
+/canary/RACK_ENV:production
+/canary/LANG:en_US.UTF-8
+/canary/BASE_CANARY_PATH:octo
+/canary/TESTING:This is only a test.
+octohost:/home/git# octo config:rm canary/TESTING
+
+octohost:/home/git# octo config canary
+/canary/SESSION_SECRET:long-random-looking-string-that-will-not-be-posted
+/canary/SENDGRID_PASSWORD:not-the-password
+/canary/SENDGRID_USERNAME:not-the-username@example.com
+/canary/EMAIL_DESTINATION:not-the-email-address@example.com
+/canary/RACK_ENV:production
+/canary/LANG:en_US.UTF-8
+/canary/BASE_CANARY_PATH:octo
+```
+
+These environment variables are injected into the container when it's built - [take a look here](https://github.com/octohost/octohost/blob/master/bin/receiver.sh#L81-L92).
+
+We also support SSH Agent Forwarding - to forward your agent - in your ~/.ssh/config file:
 
 ```
 Host octohost

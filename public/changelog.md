@@ -1,5 +1,11 @@
 ## Changelog
 
+## 0.9 - unreleased
+
+* Update to Docker 0.9.
+* Addition of [octo config](/octo-cli.html) - etcd backed environment variables injected at runtime.
+* Removal of container memory stats - the LXC source of those stats was removed as default.
+
 ## 0.8.1 - ami-68dcb158
 
 * Update to Docker 0.8.1.
@@ -73,7 +79,7 @@
 * Added image cleaning to `octo clean`
 * Removed Shipyard.
 * Updated to Serf 0.3 - fixed bug with event handler discovery.
-* Fixed some bugs with octo cli. 
+* Fixed some bugs with octo cli.
 
 ## 0.5 - ami-e876ecd8
 
