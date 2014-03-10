@@ -1,10 +1,13 @@
 ## octo cli
 
-Added in v0.4 - the octo cli can help with:
+The octo cli can help with:
 
 1. Showing status of containers you've pushed.
 2. Restarting a DOWN container.
 3. Cleaning up exited containers.
+4. Removing containers and source we don't want/need anymore.
+5. Moving sites from one octohost to another - rebuilding and relaunching them.
+6. Adding environment variables to our etcd backed config db which are injected at runtime. They are modeled after [Heroku Config Vars](https://devcenter.heroku.com/articles/config-vars).
 
 For example:
 
