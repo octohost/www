@@ -3,6 +3,7 @@
 ## 0.9 - unreleased
 
 * Update to Docker 0.9.
+* Added [etcd](https://github.com/coreos/etcd) for environment variables.
 * Addition of [octo config](/octo-cli.html) - etcd backed environment variables injected at runtime.
 * Removal of container memory stats - the LXC source of those stats was removed as default.
 
