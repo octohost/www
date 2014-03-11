@@ -27,7 +27,7 @@ In the end - your group should look like this:
 
 ```
 ec2-describe-group octohost --region us-west-2
-GROUP	sg-groupid	0000000000	octohost	Octohost Group	
+GROUP	sg-groupid	0000000000	octohost	Octohost Group
 PERMISSION	457992882886	octohost	ALLOWS	tcp	0	65535	FROM	USER	0000000000	NAME octohost	ID sg-groupid	ingress
 PERMISSION	457992882886	octohost	ALLOWS	udp	0	65535	FROM	USER	0000000000	NAME octohost	ID sg-groupid	ingress
 PERMISSION	457992882886	octohost	ALLOWS	tcp	22	22	FROM	CIDR	0.0.0.0/0	ingress
@@ -35,7 +35,7 @@ PERMISSION	457992882886	octohost	ALLOWS	tcp	80	80	FROM	CIDR	0.0.0.0/0	ingress
 PERMISSION	457992882886	octohost	ALLOWS	tcp	443	443	FROM	CIDR	0.0.0.0/0	ingress
 ```
 
-3\. Create a running instance using your AMI (or use ami-68dcb158) and security group:
+3\. Create a running instance using your AMI (or use ami-843e50b4) and security group:
 
 `ec2-run-instances --key your-key -g sg-groupid ami-yourAMI --user-data-file user-data-file/setup --region us-west-2`
 
