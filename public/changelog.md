@@ -1,6 +1,6 @@
 ## Changelog
 
-## 0.9 - ami-843e50b4
+## 0.9 - ami-da3c52ea
 
 * Update to Docker 0.9.
 * Added [etcd](https://github.com/coreos/etcd) for environment variables.
