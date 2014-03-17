@@ -1,6 +1,6 @@
 ## Changelog
 
-### NOTE: All AMI's are in USW-2.
+### NOTE: All AMIs are in USW-2.
 
 ## Next version - ami-c0fa94f0 - available for testing.
 
