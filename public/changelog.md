@@ -1,6 +1,6 @@
 ## Changelog
 
-## Next version - unreleased.
+## Next version - ami-c0fa94f0 - available for testing.
 
 * [Add](https://github.com/octohost/octohost-cookbook/commit/a934ce86eeaa8f2fc66713d6fa8f7d4fb110ccb0) vagrant, ubuntu and git users to docker group - so that they can do things without sudo.
 * [Fix](https://github.com/octohost/octohost/commit/0e3aa7f838e92139ef13a8b15b331baf1f93752e) `octo config` to properly cut apart strings with : characters in them.
