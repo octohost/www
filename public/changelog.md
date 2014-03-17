@@ -1,5 +1,7 @@
 ## Changelog
 
+### NOTE: All AMI's are in USW-2.
+
 ## Next version - ami-c0fa94f0 - available for testing.
 
 * [Add](https://github.com/octohost/octohost-cookbook/commit/a934ce86eeaa8f2fc66713d6fa8f7d4fb110ccb0) vagrant, ubuntu and git users to docker group - so that they can do things without sudo.
