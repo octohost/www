@@ -53,7 +53,7 @@ remote: Building Docker image.
 remote: Base: testing_redis_data
 remote: Nothing running - no need to look for a port.
 remote: Uploading context  2.56 kB
-remote: Uploading context 
+remote: Uploading context
 remote: Step 0 : FROM          busybox
 remote:  ---> 769b9341d937
 remote: Step 1 : VOLUME        ["/var/lib/redis"]
@@ -101,7 +101,7 @@ remote: Building Docker image.
 remote: Base: testing_redis
 remote: Nothing running - no need to look for a port.
 remote: Uploading context  2.56 kB
-remote: Uploading context 
+remote: Uploading context
 remote: Step 0 : FROM octohost/redis
 remote:  ---> 4e23407f3917
 remote: Step 1 : EXPOSE 6379
@@ -116,11 +116,11 @@ To git@server.octohost.io:testing_redis.git
  * [new branch]      master -> master
 
  ```
- 
+
 We've provisioned a Redis server and it's ready to go.
 
 Now let's link up the final application container - here's the Dockerfile:
- 
+
  ```
  FROM octohost/ruby-1.9
  ADD . /srv/www
@@ -129,9 +129,9 @@ Now let's link up the final application container - here's the Dockerfile:
  EXPOSE 5000
  CMD ["/usr/local/bin/foreman","start","-d","/srv/www"]
  ```
- 
+
 There's only 1 special comment in this Dockerfile - on push, octohost links this container to the Redis container we created in step 2. Let's try it:
- 
+
  ```
  [master] darron@/app: git push octo master
  Warning: remote port forwarding failed for listen port 52698
@@ -145,7 +145,7 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
  remote: Base: testing
  remote: Nothing running - no need to look for a port.
  remote: Uploading context 8.192 kB
- remote: Uploading context 
+ remote: Uploading context
  remote: Step 0 : FROM octohost/ruby-1.9
  remote:  ---> 9bc0da4bad25
  remote: Step 1 : ADD . /srv/www
@@ -154,15 +154,15 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
  remote:  ---> Running in ee460166f37a
  remote: Fetching gem metadata from https://rubygems.org/..........
  remote: Fetching gem metadata from https://rubygems.org/..
- remote: Installing dotenv (0.9.0) 
- remote: Installing thor (0.18.1) 
- remote: Installing foreman (0.63.0) 
- remote: Installing rack (1.5.2) 
- remote: Installing rack-protection (1.5.2) 
- remote: Installing redis (3.0.6) 
- remote: Installing tilt (1.4.1) 
- remote: Installing sinatra (1.4.4) 
- remote: Using bundler (1.3.5) 
+ remote: Installing dotenv (0.9.0)
+ remote: Installing thor (0.18.1)
+ remote: Installing foreman (0.63.0)
+ remote: Installing rack (1.5.2)
+ remote: Installing rack-protection (1.5.2)
+ remote: Installing redis (3.0.6)
+ remote: Installing tilt (1.4.1)
+ remote: Installing sinatra (1.4.4)
+ remote: Using bundler (1.3.5)
  remote: Your bundle is complete!
  remote: Gems in the groups test and development were not installed.
  remote: It was installed into ./vendor/bundle
@@ -183,7 +183,7 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
   * [new branch]      master -> master
 ```
 
-And here's the live site - with a Redis INCR counter: [http://redis.octohost.io/](http://redis.octohost.io/)
+And that's it.
 
 3 pushes - 3 containers:
 

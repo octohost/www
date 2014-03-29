@@ -50,7 +50,7 @@ remote: Building Docker image.
 remote: Base: test_memcached
 remote: Nothing running - no need to look for a port.
 remote: Uploading context 17.92 kB
-remote: Uploading context 
+remote: Uploading context
 remote: Step 0 : FROM octohost/memcached
 remote:  ---> cdbca89ea78d
 remote: Step 1 : ADD memcached.conf /etc/memcached.conf
@@ -70,11 +70,11 @@ remote: Port: 49155
 To git@server.octodev.io:test_memcached.git
  * [new branch]      master -> master
  ```
- 
+
 We've provisioned a Memcached server and it's ready to go.
 
 Now let's link up the final application container - here's the Dockerfile:
- 
+
  ```
  FROM octohost/ruby-1.9
  RUN apt-get update && apt-get install -y libsasl2-dev
@@ -84,9 +84,9 @@ Now let's link up the final application container - here's the Dockerfile:
  EXPOSE 5000
  CMD ["/usr/local/bin/foreman","start","-d","/srv/www"]
  ```
- 
+
 There's only 1 special comment in this Dockerfile - on push, octohost links this container to the Memcached container we created in step 2. Let's try it:
- 
+
  ```
  [master] darron@~/Dropbox/memcached_app: git push dev master
  Warning: remote port forwarding failed for listen port 52698
@@ -99,7 +99,7 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
  remote: Building Docker image.
  remote: Base: test
  remote: Uploading context 10.24 kB
- remote: Uploading context 
+ remote: Uploading context
  remote: Step 0 : FROM octohost/ruby-1.9
  remote:  ---> 9bc0da4bad25
  remote: Step 1 : RUN apt-get update && apt-get install -y libsasl2-dev
@@ -111,15 +111,15 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
  remote:  ---> Running in 2662ae1560c2
  remote: Fetching gem metadata from https://rubygems.org/.........
  remote: Fetching gem metadata from https://rubygems.org/..
- remote: Installing dotenv (0.9.0) 
- remote: Installing thor (0.18.1) 
- remote: Installing foreman (0.63.0) 
- remote: Installing memcached (1.7.2) 
- remote: Installing rack (1.5.2) 
- remote: Installing rack-protection (1.5.2) 
- remote: Installing tilt (1.4.1) 
- remote: Installing sinatra (1.4.4) 
- remote: Using bundler (1.3.5) 
+ remote: Installing dotenv (0.9.0)
+ remote: Installing thor (0.18.1)
+ remote: Installing foreman (0.63.0)
+ remote: Installing memcached (1.7.2)
+ remote: Installing rack (1.5.2)
+ remote: Installing rack-protection (1.5.2)
+ remote: Installing tilt (1.4.1)
+ remote: Installing sinatra (1.4.4)
+ remote: Using bundler (1.3.5)
  remote: Your bundle is complete!
  remote: Gems in the groups test and development were not installed.
  remote: It was installed into ./vendor/bundle
@@ -140,7 +140,7 @@ There's only 1 special comment in this Dockerfile - on push, octohost links this
   * [new branch]      master -> master
 ```
 
-And here's the live site - with a Memcached INCR counter: [http://memcached.octohost.io/](http://memcached.octohost.io/)
+And that's it.
 
 2 pushes - 2 containers:
 
