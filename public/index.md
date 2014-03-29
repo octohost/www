@@ -8,7 +8,7 @@ Hosting any web site required by adding a Dockerfile to your app's source reposi
 
 ## What languages are supported?
 
-We have 10 languages supported already, and many frameworks. Detailed information [available here](/languages.html).
+We have more than 10 languages supported already, and many frameworks. Detailed information [available here](/languages.html).
 
 ## How do I use it?
 
