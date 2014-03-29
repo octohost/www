@@ -9,6 +9,7 @@
 * Rename images built on octohost with different prefix '[octoprod](https://github.com/octohost/octohost/commit/a48a3fdc8af62448088619059084ac5ea466714a)' so that you can't accidentally overwrite a base image.
 * Clean up some octo commands so that you can run them as a non-root user.
 * Add some more output to deploys so that you can see ENV vars are being added.
+* Add [CONTAINER_NAME as an ENV var](https://github.com/octohost/octohost/commit/0c768f547740665429c41f7eec783ccfc8204931) inside each container.
 
 ## 0.9 - ami-da3c52ea
 
