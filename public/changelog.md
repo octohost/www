@@ -12,6 +12,7 @@
 * Add some more output to deploys so that you can see ENV vars are being added.
 * Add [CONTAINER_NAME as an ENV var](https://github.com/octohost/octohost/commit/0c768f547740665429c41f7eec783ccfc8204931) inside each container.
 * Added [HHVM](https://github.com/octohost/hhvm) and [Hack](https://github.com/octohost/hack) containers - [example site](https://github.com/octohost/hack-example-site)
+* If you're using etcd and want to transfer your env vars over, you'll need to make sure to setup the cluster properly. Take a look [here](https://github.com/octohost/octohost/blob/master/user-data-file/setup).
 
 ## 0.9 - ami-da3c52ea
 
