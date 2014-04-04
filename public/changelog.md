@@ -2,6 +2,11 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased version.
+
+* Update base Ubuntu container with all updates and patches.
+* Added [Sysdig](http://www.sysdig.org/)
+
 ## 0.9.1 - ami-e29ff7d2
 
 * Update to [Docker 0.9.1](https://github.com/dotcloud/docker/commit/d36176652ef8f0220a1cff5dc00933400c69a562#diff-4ac32a78649ca5bdd8e0ba38b7006a1e)
