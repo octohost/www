@@ -2,10 +2,11 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased version.
+## 0.9.1.1 - ami-ba8be08a
 
-* Update base Ubuntu container with all updates and patches.
+* Update base Ubuntu VM with all updates and patches.
 * Added [Sysdig](http://www.sysdig.org/)
+* Updated OpenSSL that fixes [Heartbleed](http://heartbleed.com).
 
 ## 0.9.1 - ami-e29ff7d2
 
