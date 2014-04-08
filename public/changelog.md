@@ -2,6 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased Version
+
+* Update bin/octo to [look for proper name](https://github.com/octohost/octohost/commit/e99572058e87f4c3cd1bd4fc6ca5243a4b340848).
+
 ## 0.9.1.1 - ami-ba8be08a
 
 * Update base Ubuntu VM with all updates and patches.
