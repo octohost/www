@@ -10,6 +10,7 @@
 * Addition of /get and /set for nginx config paves the way for clusters of octohosts.
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
 * Removed Serf - not being used.
+* Addition of gzip encoding to outbound proxied requests.
 
 ## 0.10.0 - ami-86fc97b6
 
