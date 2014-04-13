@@ -2,6 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased
+
+* Remove Hipache and add Nginx as the proxy. Massive speed increases.
+
 ## 0.10.0 - ami-86fc97b6
 
 * Update to [Docker 0.10](https://github.com/dotcloud/docker/blob/release-0.10/CHANGELOG.md).
