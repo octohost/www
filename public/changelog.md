@@ -2,12 +2,13 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased
+## 0.10.0.1 - Unreleased
 
 * Remove Hipache and add nginx as the proxy. Massive speed increases \(15x on an m3.medium\). Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
 * Actually install [sysdig](https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de).
 * Enable PFS for nginx SSL.
 * Addition of /get and /set for nginx config paves the way for clusters of octohosts.
+* Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
 
 ## 0.10.0 - ami-86fc97b6
 
