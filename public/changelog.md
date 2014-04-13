@@ -4,7 +4,7 @@
 
 ## Unreleased
 
-* Remove Hipache and add Nginx as the proxy. Massive speed increases.
+* Remove Hipache and add Nginx as the proxy. Massive speed increases. Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
 
 ## 0.10.0 - ami-86fc97b6
 
