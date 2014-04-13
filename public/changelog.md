@@ -11,6 +11,7 @@
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
 * Removed Serf - not being used.
 * Addition of gzip encoding to outbound proxied requests.
+* Addition of [ngxtop](https://github.com/lebinh/ngxtop).
 
 ## 0.10.0 - ami-86fc97b6
 
