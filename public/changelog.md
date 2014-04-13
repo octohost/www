@@ -4,7 +4,10 @@
 
 ## Unreleased
 
-* Remove Hipache and add Nginx as the proxy. Massive speed increases. Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
+* Remove Hipache and add nginx as the proxy. Massive speed increases \(15x on an m3.medium\). Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
+* Actually install [sysdig](https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de).
+* Enable PFS for nginx SSL.
+* Addition of /get and /set for nginx config paves the way for clusters of octohosts.
 
 ## 0.10.0 - ami-86fc97b6
 
