@@ -9,6 +9,7 @@
 * Enable PFS for nginx SSL.
 * Addition of /get and /set for nginx config paves the way for clusters of octohosts.
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
+* Update to Serf 0.5 - disabled for now - not being used.
 
 ## 0.10.0 - ami-86fc97b6
 
