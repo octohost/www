@@ -11,7 +11,7 @@ To Install Octohost
 
 NOTE: The AMI in [template.json](https://github.com/octohost/octohost-cookbook/blob/master/template.json) has all of the proper required kernel extensions for Docker as well as [Chef](http://www.opscode.com/chef/) \(currently unused\) and [Ansible](https://github.com/ansible/ansible) provisioners. If you supply your own AMI, make sure it's got those items. You can rebuild build your own from [this repo](https://github.com/octohost/ubuntu-12.0.4-3.8).
 
-2\. Create an AWS security group with port 80 open to the world, port 22 open to you and all ports open to other members of that group.
+2\. Create an AWS security group with port 80 and 443 open to the world, port 22 open to you and all ports open to other members of that group.
 
 ```
 ec2-create-group -K your-key octohost -d "Octohost Group" --region us-west-2
@@ -35,7 +35,7 @@ PERMISSION	457992882886	octohost	ALLOWS	tcp	80	80	FROM	CIDR	0.0.0.0/0	ingress
 PERMISSION	457992882886	octohost	ALLOWS	tcp	443	443	FROM	CIDR	0.0.0.0/0	ingress
 ```
 
-3\. Create a running instance using your AMI (or use ami-86fc97b6) and security group:
+3\. Create a running instance using your AMI (or use ami-8ca8c2bc) and security group:
 
 `ec2-run-instances --key your-key -g sg-groupid ami-yourAMI --user-data-file user-data-file/setup --region us-west-2`
 

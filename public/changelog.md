@@ -2,7 +2,7 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## 0.10.0.1 - Unreleased
+## 0.10.0.1 - ami-8ca8c2bc
 
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
 * Remove Hipache and add nginx as the proxy. Massive speed increases \(15x on an m3.medium\). Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
