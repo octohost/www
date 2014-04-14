@@ -4,17 +4,18 @@
 
 ## 0.10.0.1 - Unreleased
 
-* Remove Hipache and add nginx as the proxy. Massive speed increases \(15x on an m3.medium\). Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
-* Actually install [sysdig](https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de).
-* Enable PFS for nginx SSL.
-* Addition of /get, /set and /del for nginx config paves the way for clusters of octohosts.
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
-* Removed Serf - not being used.
-* Addition of gzip encoding to outbound proxied requests.
-* Addition of [ngxtop](https://github.com/lebinh/ngxtop).
+* Remove Hipache and add nginx as the proxy. Massive speed increases \(15x on an m3.medium\). Huge thanks to [@alkema](https://github.com/alkema) who made this happen.
+* Enable PFS for nginx SSL.
+* Addition of `octo proxy:get`, `octo proxy:set` and `octo proxy:rm` for nginx config paves the way for clusters of octohosts.
 * Move nginx virtualhost api interface to [octohost/tentacles](https://github.com/octohost/tentacles) container.
 * Add `octo tentacles` command to start|stop|pull octohost/tentacles container.
+* Addition of gzip encoding to outbound proxied requests.
+* Addition of [ngxtop](https://github.com/lebinh/ngxtop).
+* Actually install [sysdig](https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de).
+* Removed Serf - not being used.
 * Made Redis listen on all interfaces so that it can be used from the octohost/tentacles container.
+* Update Docker cookbook to fix startup workarounds.
 
 ## 0.10.0 - ami-86fc97b6
 
