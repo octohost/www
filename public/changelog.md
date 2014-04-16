@@ -2,6 +2,12 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased
+
+* Add SPDY support to nginx.
+* Add GeoIP databases and configure geoip module.
+* Add additional [open file caching and headers](https://github.com/octohost/octohost-cookbook/commit/49381260b7505aadc5be4ae0fb3120a32bdd0ef3).
+
 ## 0.10.0.1 - ami-8ca8c2bc - \(ami-e5cfd18c in USE-1\)
 
 * Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please 'apt-get update; apt-get upgrade; service hipache restart' to be sure.
