@@ -9,6 +9,7 @@
 * Added additional [open file caching and headers](https://github.com/octohost/octohost-cookbook/commit/49381260b7505aadc5be4ae0fb3120a32bdd0ef3).
 * Added X-Request-Id header to nginx. [From this example.](http://it.randomthemes.com/2014/01/21/generate-unique-request-id-nginx/)
 * Added firewall to non EC2 builds. Ports 22, 80 and 443 are open by default.
+* Add hostname and X-Request-Id to proxy logs.
 
 ## 0.10.0.1 - ami-8ca8c2bc - \(ami-e5cfd18c in USE-1\)
 
