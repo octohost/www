@@ -2,7 +2,7 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased
+## 0.11.1 - ami-7d2a5c4d
 
 * Update to Docker 0.11.1.
 * Update to [Ubuntu 14.04LTS](https://github.com/octohost/ubuntu-14.04).
