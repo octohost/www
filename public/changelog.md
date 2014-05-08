@@ -5,7 +5,7 @@
 ## Unreleased
 
 * Update to Docker 0.11.1.
-* Update to Ubuntu 14.04LTS.
+* Update to [Ubuntu 14.04LTS](https://github.com/octohost/ubuntu-14.04).
 * Added SPDY support to nginx.
 * Added GeoIP databases and configure geoip module.
 * Added additional [open file caching and headers](https://github.com/octohost/octohost-cookbook/commit/49381260b7505aadc5be4ae0fb3120a32bdd0ef3).
