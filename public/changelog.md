@@ -4,12 +4,16 @@
 
 ## Unreleased
 
+* Update to Docker 0.11.1.
+* Update to Ubuntu 14.04LTS.
 * Added SPDY support to nginx.
 * Added GeoIP databases and configure geoip module.
 * Added additional [open file caching and headers](https://github.com/octohost/octohost-cookbook/commit/49381260b7505aadc5be4ae0fb3120a32bdd0ef3).
-* Added X-Request-Id header to nginx. [From this example.](http://it.randomthemes.com/2014/01/21/generate-unique-request-id-nginx/)
+* Added X-Request-Id header to nginx. Using [ngx_txid](https://github.com/octohost/ngx_txid).
 * Added firewall to non EC2 builds. Ports 22, 80 and 443 are open by default.
 * Add hostname and X-Request-Id to proxy logs.
+* Extract duplicated variables from /usr/bin/octo and /home/git/receiver to /etc/default/octohost.
+* If Docker [doesn't launch the container, try again](https://github.com/octohost/octohost/commit/d3b95255f279c4e8e4a867fd23b58bc32ca43866).
 
 ## 0.10.0.1 - ami-8ca8c2bc - \(ami-e5cfd18c in USE-1\)
 
