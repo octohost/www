@@ -7,6 +7,8 @@
 * Added [usage instrutions](https://github.com/octohost/octohost/commit/bfa7c79b220b853b441313fdb24ca0a25d306265) to the octo tool.
 * Added `octo update` to pull the current octo command down from github.
 * Added help text when you just run `octo`
+* Got Rackspace support working properly with PRIVATE_IP and firewall.
+* Added `knife solo` support - `rake knife_solo user=root ip=555.55.555.5` - works on Linode - should work on others.
 
 ## 0.11.1 - ami-7d2a5c4d
 
@@ -34,7 +36,7 @@
 * Actually install [sysdig](https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de).
 * Removed Serf - not being used.
 * Made Redis listen on all interfaces so that it can be used from the octohost/tentacles container.
-* Update Docker cookbook to fix startup workarounds.
+* Update Docker cookbook to fix startup workarounds. \(Had to re-add the workarounds.\)
 
 ## 0.10.0 - ami-86fc97b6
 
