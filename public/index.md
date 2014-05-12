@@ -24,7 +24,9 @@ There are several ways to get it:
 
 5. Build your own somewhere else using [Packer](http://www.packer.io) and a set of [Chef cookbooks](https://github.com/octohost/octohost-cookbook).
 
-6. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
+6. Build your own using `knife solo` - just need SSH access - [more info](/knife-solo.html). \(Added May 10, 2014.\)
+
+7. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
 
 ## Advanced quickstart with AWS
 
