@@ -9,6 +9,7 @@
 * Added help text when you just run `octo`
 * Got Rackspace support working properly with PRIVATE_IP and firewall.
 * Added `knife solo` support - `rake knife_solo user=root ip=555.55.555.5` - works on Linode - should work on others.
+* Fix quoting when adding config variables with [Bash special characters](https://github.com/octohost/octohost/commit/0752bfec0af38947c38b1544ce0bee18b8608261).
 
 ## 0.11.1 - ami-7d2a5c4d
 
