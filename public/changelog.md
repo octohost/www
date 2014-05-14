@@ -12,7 +12,7 @@
 * Fix quoting when adding config variables with [Bash special characters](https://github.com/octohost/octohost/commit/0752bfec0af38947c38b1544ce0bee18b8608261).
 * Added [PHP5-Apache](https://github.com/octohost/php5-apache).
 * Added [WordPress](https://github.com/octohost/wordpress).
-* Added [logspout](https://github.com/progrium/logspout) - controlled through `octo logspout {pull|start|stop}`
+* Added [logspout](https://github.com/progrium/logspout) - controlled through `octo logspout {pull|start|stop}` - [commit](https://github.com/octohost/octohost/commit/855e26ec1c69808e1a1c1d04c644f0b8eecde339)
 
 ## 0.11.1 - ami-7d2a5c4d
 
