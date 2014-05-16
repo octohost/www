@@ -13,7 +13,9 @@
 * Added [PHP5-Apache](https://github.com/octohost/php5-apache).
 * Added [WordPress](https://github.com/octohost/wordpress).
 * Added [logspout](https://github.com/progrium/logspout) - controlled through `octo logspout {pull|start|stop}` - [commit](https://github.com/octohost/octohost/commit/855e26ec1c69808e1a1c1d04c644f0b8eecde339)
-* Added `octo logs nginx:start` - send logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
+* Added `octo logs nginx:start` - send nginx logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
+* Added `octo logs docker:start` - send Docker logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
+* Added 'octo logs start {full-path} {mount}' - to send any logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 
 ## 0.11.1 - ami-7d2a5c4d
 
