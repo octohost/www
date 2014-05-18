@@ -16,6 +16,7 @@
 * Added `octo logs nginx:start` - send nginx logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Added `octo logs docker:start` - send Docker logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Added 'octo logs start {full-path} {mount}' - to send any logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
+* Re-added [package that enables AUFS](https://github.com/darron/docker-cookbook/commit/23d3af52bf1af46d5661c53ad6dad4ece7b99e23) instead of Devicemapper for 14.04.
 
 ## 0.11.1 - ami-7d2a5c4d
 
