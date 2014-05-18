@@ -2,7 +2,7 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased
+## Not final - Available to test as 'ami-cf5928ff'
 
 * Added [usage instrutions](https://github.com/octohost/octohost/commit/bfa7c79b220b853b441313fdb24ca0a25d306265) to the octo tool.
 * Added `octo update` to pull the current octo command down from github.
