@@ -13,7 +13,9 @@ deploy :
     - script:
         name: Deploy to octohost.
         code: |-
-          echo -e 'Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null' >> ~/.ssh/config
+          privateKey=$(eval echo "\$${KEY}_PRIVATE")
+          echo -e 'Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null\n  IdentityFile /home/ubuntu/.ssh/id_rsa' >> ~/.ssh/config
+          echo -e "$privateKey" > /home/ubuntu/.ssh/id_rsa
           git push $GIT_REMOTE master
   after-steps:
         - sherzberg/slack-notify:
