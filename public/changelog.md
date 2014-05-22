@@ -16,6 +16,7 @@
 * Added `octo logs nginx:start` - send nginx logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Added `octo logs docker:start` - send Docker logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Added 'octo logs start {full-path} {mount}' - to send any logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
+* Added 'octo logs octologs:start' - sends nginx and Docker logs to remote syslog in a single container.
 * Re-added [package that enables AUFS](https://github.com/darron/docker-cookbook/commit/23d3af52bf1af46d5661c53ad6dad4ece7b99e23) instead of Devicemapper for 14.04.
 * Added the first pass at a plugin system for the 'octo' command. A [mysql](https://github.com/octohost/mysql-plugin) is first - it doesn't really do anything yet.
 * Fixed the [@digitalocean](https://www.digitalocean.com/) build by [updating the nginx.conf](https://github.com/darron/fpm-recipes/commit/79f5b4d6a7fb569f96f0fc47576072cc1dc2188c) inside the openresty deb file. Thanks to [@philholden](https://github.com/philholden) for filing the bug and taking a stab at fixing it.
