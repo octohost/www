@@ -13,6 +13,7 @@ deploy :
     - script:
         name: Deploy to octohost.
         code: |-
+          mkdir ~/.ssh/ && echo -e 'Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null' >> ~/.ssh/config
           git push $GIT_REMOTE master
   after-steps:
         - sherzberg/slack-notify:
