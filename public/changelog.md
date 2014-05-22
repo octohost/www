@@ -2,7 +2,7 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Not final - Available to test as 'ami-cf5928ff' - Not final.
+## Unreleased.
 
 * Added [usage instrutions](https://github.com/octohost/octohost/commit/bfa7c79b220b853b441313fdb24ca0a25d306265) to the octo tool.
 * Added `octo update` to pull the current octo command down from github.
@@ -17,6 +17,8 @@
 * Added `octo logs docker:start` - send Docker logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Added 'octo logs start {full-path} {mount}' - to send any logs to remote syslog through [octohost/remote_syslog](https://github.com/octohost/remote_syslog)
 * Re-added [package that enables AUFS](https://github.com/darron/docker-cookbook/commit/23d3af52bf1af46d5661c53ad6dad4ece7b99e23) instead of Devicemapper for 14.04.
+* Added the first pass at a plugin system for the 'octo' command. A [mysql](https://github.com/octohost/mysql-plugin) is first - it doesn't really do anything yet.
+* Fixed the [@digitalocean](https://www.digitalocean.com/) build by [updating the nginx.conf](https://github.com/darron/fpm-recipes/commit/79f5b4d6a7fb569f96f0fc47576072cc1dc2188c) inside the openresty deb file. Thanks to [@philholden](https://github.com/philholden) for filing the bug and taking a stab at fixing it.
 
 ## 0.11.1 - ami-7d2a5c4d
 
