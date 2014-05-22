@@ -12,3 +12,9 @@ build:
         name: harp compile
         code: |
           harp compile
+deploy :
+  steps :
+    - script:
+        name: Deploy to octohost.
+        code: |-
+          git push $GIT_REMOTE master
