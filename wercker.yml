@@ -6,8 +6,8 @@ build:
     - script:
         name: harp compile
         code: |
-          sudo npm -g install
-          harp compile
+          npm install
+          ./node_modules/.bin/harp compile
 deploy :
   steps :
     - script:
