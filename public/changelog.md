@@ -6,7 +6,7 @@
 
 * Added [usage instrutions](https://github.com/octohost/octohost/commit/bfa7c79b220b853b441313fdb24ca0a25d306265) to the octo tool.
 * Added `octo update` to pull the current octo command down from github.
-* Added help text when you just run `octo`
+* Added help text when you run `octo help`
 * Got Rackspace support working properly with PRIVATE_IP and firewall.
 * Added `knife solo` support - `rake knife_solo user=root ip=555.55.555.5` - works on Linode - should work on others.
 * Fix quoting when adding config variables with [Bash special characters](https://github.com/octohost/octohost/commit/0752bfec0af38947c38b1544ce0bee18b8608261).
