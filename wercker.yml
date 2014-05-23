@@ -15,7 +15,7 @@ deploy :
         code: |-
           privateKey=$(eval echo "\$KEY_PRIVATE")
           echo -e 'Host *\n  StrictHostKeyChecking no\n  UserKnownHostsFile=/dev/null\n  IdentityFile /home/ubuntu/.ssh/id_rsa' >> ~/.ssh/config
-          echo -e "$privateKey" > /home/ubuntu/.ssh/id_rsa && chmod 600 /home/ubuntu/.ssh/id_rsa && cat /home/ubuntu/.ssh/id_rsa
+          echo -e "$privateKey" > /home/ubuntu/.ssh/id_rsa && chmod 600 /home/ubuntu/.ssh/id_rsa
           git push $GIT_REMOTE master
   after-steps:
         - sherzberg/slack-notify:
