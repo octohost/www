@@ -2,9 +2,8 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased.
+## 0.11.1.1 - ami-cd1161fd
 
-* Added [usage instrutions](https://github.com/octohost/octohost/commit/bfa7c79b220b853b441313fdb24ca0a25d306265) to the octo tool.
 * Added `octo update` to pull the current octo command down from github.
 * Added help text when you run `octo help`
 * Got Rackspace support working properly with PRIVATE_IP and firewall.
