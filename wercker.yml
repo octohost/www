@@ -1,25 +1,14 @@
 box: wercker/nodejs
-# Build definition
 build:
-  # The steps that will be executed on build
   steps:
-    - script:
-        name: harp compile
-        code: |
-          npm install
-          ./node_modules/.bin/harp compile
-deploy :
-    steps :
+    - npm-install
+deploy:
+  steps:
     - add-to-known_hosts:
         hostname: server.octohost.io
     - add-ssh-key:
         keyname: KEY
     - script:
-        name: Deploy to octohost.
-        code: |-
+        name: Push to dokku
+        code: |
           git push $GIT_REMOTE master
-  after-steps:
-        - sherzberg/slack-notify:
-            subdomain: $SLACK_SUBDOMAIN
-            token: $SLACK_TOKEN
-            channel: $SLACK_CHANNEL
