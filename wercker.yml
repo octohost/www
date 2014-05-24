@@ -1,5 +1,4 @@
 box: wercker/nodejs
-build:
 deploy:
   steps:
     - add-to-known_hosts:
