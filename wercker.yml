@@ -10,7 +10,7 @@ build:
           ./node_modules/.bin/harp compile
 deploy :
   steps :
-    - add-ssh-key:
+    - wercker/add-ssh-key:
       keyname: KEY
     - script:
         name: Deploy to octohost.
