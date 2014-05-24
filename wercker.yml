@@ -1,4 +1,7 @@
 box: wercker/nodejs
+build:
+  steps:
+    - npm-install
 deploy:
   steps:
     - add-to-known_hosts:
