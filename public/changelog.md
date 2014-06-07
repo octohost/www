@@ -2,7 +2,7 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Unreleased
+## 0.12 - ami-8d6416bd
 
 * Docker 0.12
 * Updated Ubuntu with OpenSSL CCS patched.
