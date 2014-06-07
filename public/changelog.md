@@ -2,6 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased
+
+* Add `octo config:export` command to [get all config variables](https://github.com/octohost/octohost/commit/7849e530cc80149d05b004c94bcc49bec49ecd47). Can update with `octo update`
+
 ## 0.12 - ami-8d6416bd
 
 * [Docker 0.12](https://github.com/dotcloud/docker/blob/master/CHANGELOG.md)
