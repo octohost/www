@@ -4,6 +4,8 @@
 
 ## Unreleased
 
+* Docker 0.12
+* Updated Ubuntu with OpenSSL CCS patched.
 * Added apparmor and apparmor-utils - seems to help with strange Apparmor problems on Ubuntu 14.04LTS.
 * Containers without any exposed ports weren't able to launch properly. [Now they are.](https://github.com/octohost/octohost/commit/747ec50bbaef5ab3622d1a3e70d61cf874acd07b)
 * Containers without any exposed ports weren't killing the old container. [Now they are.](https://github.com/octohost/octohost/commit/7afd14a75ec9a13ef8c23258d39849c811d04004)
