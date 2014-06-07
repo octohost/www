@@ -4,7 +4,7 @@
 
 ## 0.12 - ami-8d6416bd
 
-* Docker 0.12
+* [Docker 0.12](https://github.com/dotcloud/docker/blob/master/CHANGELOG.md)
 * Updated Ubuntu with OpenSSL CCS patched.
 * Added apparmor and apparmor-utils - seems to help with strange Apparmor problems on Ubuntu 14.04LTS.
 * Containers without any exposed ports weren't able to launch properly. [Now they are.](https://github.com/octohost/octohost/commit/747ec50bbaef5ab3622d1a3e70d61cf874acd07b)
