@@ -1,5 +1,8 @@
 ## octo cli
 
+### This is a little out of date. For the most accurate information, run `octo help` on your octohost.
+### Will update as soon as possible.
+
 The octo cli can help with:
 
 1. Showing status of containers you've pushed.

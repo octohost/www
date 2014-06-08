@@ -13,7 +13,7 @@ deploy:
         code: |
           git push $GIT_REMOTE master
   after-steps:
-        - sherzberg/slack-notify:
-            subdomain: $SLACK_SUBDOMAIN
-            token: $SLACK_TOKEN
-            channel: $SLACK_CHANNEL
+        - hipchat-notify:
+            token: $HIPCHAT_TOKEN
+            room-id: 618538
+            from-name: werckerbot
