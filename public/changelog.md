@@ -6,6 +6,7 @@
 
 * [Docker 1.0](http://blog.docker.com/2014/06/its-here-docker-1-0/)
 * Add `octo config:export` command to [get all config variables](https://github.com/octohost/octohost/commit/7849e530cc80149d05b004c94bcc49bec49ecd47). Can update with `octo update`
+* Vagrant build coming soon!
 
 ## 0.12 - ami-8d6416bd
 
