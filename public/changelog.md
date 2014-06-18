@@ -2,11 +2,28 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Working On
+
+* Adding and removing Consul Service Checks.
+* Splitting multiple tags in CONSUL_TAGS by commas.
+* Building nginx configuration from Consul Service information.
+
+## Unreleased
+
+* Moved from etcd to Consul for ENV variables.
+* Registered each container as a Consul Service - using `octo service:set`
+* Automatically tag all Consul Services with 'http' unless they're set in the CONSUL_TAGS ENV variable. Used the same ENV variable as [docksul](https://github.com/progrium/docksul).
+* Show all Consul Services on a host - using `octo services`
+* Show all Consul Services in the cluster - using `octo services:catalog`
+* Added `octo start|stop` that work on containers with source and images you have built but haven't "pushed" over.
+* Added `octo reload` to stop and start images while reloading any ENV vars and configuration.
+* Clarified `octo restart` - it rebuilds from source and restarts the container.
+* Added `octo config:env` - to grab ENV vars from Consul.
+
 ## 1.0 - ami-6799eb57
 
 * [Docker 1.0](http://blog.docker.com/2014/06/its-here-docker-1-0/)
 * Add `octo config:export` command to [get all config variables](https://github.com/octohost/octohost/commit/7849e530cc80149d05b004c94bcc49bec49ecd47). Can update with `octo update`
-* Vagrant build coming soon!
 
 ## 0.12 - ami-8d6416bd
 
