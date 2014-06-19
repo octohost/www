@@ -4,9 +4,10 @@
 
 ## Working On
 
-* Adding and removing Consul Service Checks.
-* Splitting multiple tags in CONSUL_TAGS by commas.
 * Building nginx configuration from Consul Service information.
+* Integrating multiple containers with nginx. The additional containers are not currently active.
+* Splitting multiple tags in CONSUL_TAGS by commas.
+* Would like to rewrite the `octo` command and clean it up. When I have time.
 
 ## Unreleased
 
@@ -16,9 +17,11 @@
 * Show all Consul Services on a host - using `octo services`
 * Show all Consul Services in the cluster - using `octo services:catalog`
 * Added `octo start|stop` that work on containers with source and images you have built but haven't "pushed" over.
+* `octo start {container} {n}` will launch n number of containers.
 * Added `octo reload` to stop and start images while reloading any ENV vars and configuration.
 * Clarified `octo restart` - it rebuilds from source and restarts the container.
 * Added `octo config:env` - to grab ENV vars from Consul.
+* If the 'http' tag is present, add a simple http health check.
 
 ## 1.0 - ami-6799eb57
 
