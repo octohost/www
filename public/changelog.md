@@ -4,8 +4,6 @@
 
 ## Working On
 
-* Building nginx configuration from Consul Service information.
-* Integrating multiple containers with nginx. The additional containers are not currently active.
 * Splitting multiple tags in CONSUL_TAGS by commas.
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
@@ -25,6 +23,8 @@
 * If the 'http' tag is present, add a simple http health check.
 * Added the ability to [push and pull from a private registry](https://github.com/octohost/octohost/blob/master/bin/octo#L541-L567).
 * If PRIVATE_REGISTRY is defined, [push the image automatically after you're done building](https://github.com/octohost/octohost/blob/master/bin/receiver.sh#L138-L141).
+* Building nginx configuration from Consul Service information. [octoconfig does this](https://github.com/octohost/octoconfig)
+* Integrating multiple containers with nginx. octoconfig generates config files that use all active containers.
 
 ## 1.0 - ami-6799eb57
 
