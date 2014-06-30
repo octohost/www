@@ -38,11 +38,17 @@ It:
   octo config:export                       Get all config variables for all containers.
   octo config:proxy                        Update the proxy configuration from Consul data.
 
+  octo domains:set {container} {domains}   Put list of comma separated domains into Consul for a {container}
+  octo domains:get {container}             Get list of domains from Consul for a {container}
+
   octo service:set {container} {port}      Add service to Consul.
-  octo service:rm {container-port}         Remove a service from Consul.
+  octo service:rm {container} {port}       Remove a service from Consul.
   octo service:tags {container}            Get service tags from CONSUL_TAGS ENV in a container.
+
   octo services                            List all services that the local Consul agent knows about.
   octo services:catalog                    List all services that the Consul cluster knows about.
+  octo services:clear                      Remove all services from Consul.
+  octo services:register                   Register all running containers with Consul.
 
   octo logspout {pull|start|stop}          Pull/start/stop progrium/logspout image.
 
