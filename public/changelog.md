@@ -25,6 +25,7 @@
 * If PRIVATE_REGISTRY is defined, [push the image automatically after you're done building](https://github.com/octohost/octohost/blob/master/bin/receiver.sh#L138-L141).
 * Building nginx configuration from Consul Service information. [octoconfig does this](https://github.com/octohost/octoconfig)
 * Integrating multiple containers with nginx. octoconfig generates config files that use all active containers.
+* For a container called 'website' if you set an environment config `octo config:set website/CONTAINERS 5` it will launch `5` containers for you on each push. It launches the new containers first, then kills the old containers one by one.
 
 ## 1.0 - ami-6799eb57
 
