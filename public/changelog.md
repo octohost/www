@@ -10,7 +10,7 @@
 
 ## 1.1 - ami-cd1b62fd
 
-* Docker 1.1
+* Docker 1.1.1
 * Moved from etcd to Consul for ENV variables.
 * Registered each container as a Consul Service - using `octo service:set`
 * Automatically tag all Consul Services with 'http' unless they're set in the CONSUL_TAGS ENV variable. Used the same ENV variable as [docksul](https://github.com/progrium/docksul).
