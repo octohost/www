@@ -1,6 +1,7 @@
 ## Documentation
 
 1. [High Level Component Overview](/component-overview.html)
+1. [Theory of Operation](/theory-of-operation.html)
 1. [Languages and Frameworks](/languages.html)
 2. [AWS Install](/aws-install.html)
 3. [Knife Solo Install](/knife-solo.html)
