@@ -40,4 +40,6 @@ cd harp && git remote add octohost git@ip.address.here:harp.git
 git push octohost master
 ```
 
+If you want a [full explanation of those commands - take a look here](/aws-install.html).
+
 ## Any questions?
