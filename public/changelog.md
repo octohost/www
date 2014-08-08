@@ -8,6 +8,11 @@
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
+## Unreleased
+
+* Fixed the `octo status` command to use Consul health check data rather than an additional, unreliable http check.
+* Handle environment variables with spaces in them. Thanks to [Bruno Lara Tavares](https://github.com/bltavares).
+
 ## 1.1 - ami-cd1b62fd
 
 * Docker 1.1.1
