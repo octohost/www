@@ -2,7 +2,7 @@
 
 Initially contributed by [Steffen Müller](https://github.com/steffenmllr) - added to the project as a Rake task.
 
-1. Clone the [octohost-cookbook](https://github.com/octohost/octohost-cookbook)
+1. Clone the [octohost-cookbook](https://github.com/octohost/octohost-cookbook) to your local machine. NOT the server you want to install it on.
 2. `cd octohost-cookbook && bundle install`
 3. `rake knife_solo user=root ip=555.55.555.5` # Use your ip address.
 4. Once it's done, you'll need to add your keys to the git user: `cat ~/.ssh/id_rsa.pub | ssh root@IP "sudo gitreceive upload-key your-name-here"`
