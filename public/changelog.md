@@ -10,6 +10,15 @@
 
 ## Unreleased
 
+* Upgraded to [Docker 1.2.0](https://blog.docker.com/2014/08/announcing-docker-1-2-0/).
+* Added [nsenter and docker-enter](https://github.com/darron/docker-cookbook/commit/f48a83edf9918550bc4b43081ef5d6886b899172) to default install.
+* Added additional folder for [manually configured nginx virtualhosts](https://github.com/octohost/octohost-cookbook/commit/294b06f6692bc8ac11be388cf6afa0a1e355bb88). A great way to expose [Consul](http://www.consul.io) if you'd like to. [Example nginx config here.](https://gist.github.com/darron/3f19aa600abf044b3918)
+* Don't have to use Xip.io if [you don't want to](https://github.com/octohost/octohost/commit/41c8d045b14788436ce4c236da12e1c7f5dbf67d).
+* Added more commonly used `octo -h` and `octo --help`.
+* Added [LINK_PREFIX to make URLs configureable](https://github.com/octohost/octohost/commit/d8ab8c5253bff2f1c4cbc445d132853ab0227126).
+* Use sudo wherever it's needed. [Don't have to be root](https://github.com/octohost/octohost/commit/0e80005e86a591d2dc8b9e5bca06b8414b3b0dfe).
+* Only [register services that match](https://github.com/octohost/octohost/commit/86456265412bb966029fb13ce77891161fb3f3bf) $BUILD_ORG_NAME.
+* Fixed `octo services:clear` to [properly clear out the services](https://github.com/octohost/octohost/commit/0c9a5737e4270507e253a5fd079038865aeef6c4) from abnormally stopped containers.
 * Fixed the `octo status` command to use Consul health check data rather than an additional, unreliable http check.
 * Handle environment variables with spaces in them. Thanks to [Bruno Lara Tavares](https://github.com/bltavares).
 
