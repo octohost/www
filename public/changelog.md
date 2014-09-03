@@ -11,6 +11,7 @@
 ## Unreleased
 
 * Upgraded to [Docker 1.2.0](https://blog.docker.com/2014/08/announcing-docker-1-2-0/).
+* The `octo` MySQL plugin will no longer try and restart [non-running containers](https://github.com/octohost/mysql-plugin/commit/a4c6bb0add8c37064ed6e716ec9addb89368c38f).
 * Added [nsenter and docker-enter](https://github.com/darron/docker-cookbook/commit/f48a83edf9918550bc4b43081ef5d6886b899172) to default install.
 * Added additional folder for [manually configured nginx virtualhosts](https://github.com/octohost/octohost-cookbook/commit/294b06f6692bc8ac11be388cf6afa0a1e355bb88). A great way to expose [Consul](http://www.consul.io) if you'd like to. [Example nginx config here.](https://gist.github.com/darron/3f19aa600abf044b3918)
 * Don't have to use Xip.io if [you don't want to](https://github.com/octohost/octohost/commit/41c8d045b14788436ce4c236da12e1c7f5dbf67d).
