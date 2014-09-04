@@ -8,9 +8,10 @@
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
-## Unreleased
+## 1.2 - ami-075e1837 - \(ami-7265c31a in USE-1\)
 
 * Upgraded to [Docker 1.2.0](https://blog.docker.com/2014/08/announcing-docker-1-2-0/).
+* Fully patched and updated with all current Ubuntu updates.
 * The `octo` MySQL plugin will no longer try and restart [non-running containers](https://github.com/octohost/mysql-plugin/commit/a4c6bb0add8c37064ed6e716ec9addb89368c38f).
 * Added [nsenter and docker-enter](https://github.com/darron/docker-cookbook/commit/f48a83edf9918550bc4b43081ef5d6886b899172) to default install.
 * Added additional folder for [manually configured nginx virtualhosts](https://github.com/octohost/octohost-cookbook/commit/294b06f6692bc8ac11be388cf6afa0a1e355bb88). A great way to expose [Consul](http://www.consul.io) if you'd like to. [Example nginx config here.](https://gist.github.com/darron/3f19aa600abf044b3918)
