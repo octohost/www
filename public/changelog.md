@@ -14,6 +14,7 @@
 * Added `octo move:config` to grab config from `octo config:export` on remote server and import locally. Great when you're moving / replacing an octohost.
 * Added `octo move:redis to grab Redis keys from remote Redis server.`
 * Update to Consul 0.4.
+* Bugfix from [Brandl](https://github.com/octohost/octohost/pull/67).
 
 ## 1.2 - ami-075e1837 - \(ami-7265c31a in USE-1\)
 
