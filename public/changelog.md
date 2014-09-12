@@ -8,7 +8,7 @@
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
-## Unreleased
+## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
 * Adjusted `octo move sites` to `octo move:sites`.
 * Added `octo move:config` to grab config from `octo config:export` on remote server and import locally. Great when you're moving / replacing an octohost.
