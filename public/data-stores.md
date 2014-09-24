@@ -27,7 +27,7 @@ OR
 
 `# LINK_SERVICE memcached container_name_goes_here`
 
-Also
+Also:
 
 ```bash
 # MOUNT_FROM_HOST /etc/data
