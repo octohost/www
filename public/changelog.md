@@ -11,6 +11,9 @@
 ## Unreleased
 
 * Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
+* Update to Docker 1.3.0.
+* Update to Consul 0.4.1.
+* Add Docker repository in a more reliable way.
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
@@ -22,7 +25,7 @@
 
 ## 1.2 - ami-075e1837 - \(ami-7265c31a in USE-1\)
 
-* Upgraded to [Docker 1.2.0](https://blog.docker.com/2014/08/announcing-docker-1-2-0/).
+* Update to [Docker 1.2.0](https://blog.docker.com/2014/08/announcing-docker-1-2-0/).
 * Fully patched and updated with all current Ubuntu updates.
 * The `octo` MySQL plugin will no longer try and restart [non-running containers](https://github.com/octohost/mysql-plugin/commit/a4c6bb0add8c37064ed6e716ec9addb89368c38f).
 * Added [nsenter and docker-enter](https://github.com/darron/docker-cookbook/commit/f48a83edf9918550bc4b43081ef5d6886b899172) to default install.
