@@ -11,9 +11,11 @@
 ## Unreleased
 
 * Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
-* Update to Docker 1.3.0.
+* Update to Docker 1.3.1.
 * Update to Consul 0.4.1.
 * Add Docker repository in a more reliable way.
+* Change to newer Consul cookbook.
+* Merge [bugfix](https://github.com/octohost/octohost/pull/74) from lorello.
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
