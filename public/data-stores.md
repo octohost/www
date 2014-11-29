@@ -19,7 +19,7 @@ NOTE: There is currently a single linked container per application. You can use 
 4. LINK\_SERVICE - To [link to a container with a running data store](https://docs.docker.io/en/latest/use/working_with_links_names/), this comment tells octohost to link to a container named 'currentgitreponame\_servicename'. If you were using Redis, and your git repo was called 'awesomewebsite', it would look for 'awesomewebsite\_redis' with the alias 'redis'.
 5. MOUNT\_FROM\_HOST - Mount data from the host filesystem into the container filesystem.
 
-NOTE: If you your service container is named differently you can specify the name:
+NOTE: If your service container is named differently you can specify the name:
 
 `# LINK_SERVICE redis container_name_goes_here`
 
