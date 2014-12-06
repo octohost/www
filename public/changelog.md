@@ -10,8 +10,8 @@
 
 ## Unreleased
 
-* Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
 * Added PORTS\_FROM\_HOST to add the host ports to the docker container. [More info.](/ports.html)
+* Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
 * Update to Docker 1.3.1.
 * Update to Consul 0.4.1.
 * Add Docker repository in a more reliable way.
