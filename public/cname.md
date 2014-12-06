@@ -1,6 +1,4 @@
-## Redis on octohost
-### NOTE: Released at 0.8.1.
-#### Please send feedback to [Darron](mailto:darron@froese.org)
+## CNAME on octohost
 
 Adding an assigned domain name to an octohost website automagically.
 
