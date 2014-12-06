@@ -1,5 +1,7 @@
 ## PORTS on octohost
 
+### This is another "magic" Dockerfile comment.
+
 Adding non-http/https assigned ports to an octohost container automagically.
 The magic comment PORTS\_FROM\_HOST will assign ports from the host to the container.
 
