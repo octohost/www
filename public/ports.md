@@ -13,6 +13,14 @@ i.e.
 
 `# PORTS_FROM_HOST X Y`
 
-corresponds to an command line option of:
+corresponds to a command line option of:
 
 `-p 0.0.0.0:X:Y`
+
+NOTE: you can add multiple of these lines to add multiple ports to a container
+
+CAVEATS: In docker the -P and -p flags appear to be mutually exclusive,
+i.e. they don’t play well together, 
+as such using this option removes the -P flag
+and I am using with the NO_HTTP_PROXY magic comment as well.
+YMMV
