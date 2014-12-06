@@ -5,9 +5,9 @@
 Adding non-http/https assigned ports to an octohost container automagically.
 The magic comment PORTS\_FROM\_HOST will assign ports from the host to the container.
 
-e.g. to forward all traffic from port 9090 to the container add this line to your Dockerfile:
+e.g. to forward all traffic from port 8080 to the container add this line to your Dockerfile:
 
-`# PORTS_FROM_HOST 9090 9090`
+`# PORTS_FROM_HOST 8080 8080`
 
 i.e.
 
