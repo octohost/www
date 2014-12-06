@@ -9,3 +9,4 @@
 5. [Simple Example Screencast](/screencast.html)
 6. [Persistent Data Stores](/data-stores.html)
 7. [octo cli](/octo-cli.html)
+8. [cname](/cname.html)
