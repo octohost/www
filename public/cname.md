@@ -9,9 +9,7 @@ This is easy enough, add a domain name to a file called CNAME to your root direc
 3. `git commit -m “added my.example.com into CNAME”`
 4. `git push octo master`
 5. log into the octohost and `octo domains:get YOUR_PUSHED_REPO`
-```
-octo domains:get YOUR_PUSHED_REPO
-YOUR_PUSHED_REPO.192.168.62.86.xip.io,my.example.com
-```
+returns something similar to:
+`YOUR_PUSHED_REPO.192.168.62.86.xip.io,my.example.com`
 
 TADA! now your octohost responds to your assigned domain name
