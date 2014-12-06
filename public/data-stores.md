@@ -18,6 +18,7 @@ NOTE: There is currently a single linked container per application. You can use 
 3. VOLUMES\_FROM - To [use a volume from a data only container](https://docs.docker.io/en/latest/use/working_with_links_names/) this tells octohost to look for a container named "currentgitreponame\_data"
 4. LINK\_SERVICE - To [link to a container with a running data store](https://docs.docker.io/en/latest/use/working_with_links_names/), this comment tells octohost to link to a container named 'currentgitreponame\_servicename'. If you were using Redis, and your git repo was called 'awesomewebsite', it would look for 'awesomewebsite\_redis' with the alias 'redis'.
 5. MOUNT\_FROM\_HOST - Mount data from the host filesystem into the container filesystem.
+6. PORTS\_FROM\_HOST - Assign ports from the host to the container.  [ports](/ports.html)
 
 NOTE: If your service container is named differently you can specify the name:
 
