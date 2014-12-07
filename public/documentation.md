@@ -11,3 +11,4 @@
 10. [octo cli](/octo-cli.html)
 11. [cname](/cname.html)
 12. [ports](/ports.html)
+13. [keys](/keys.html)
