@@ -16,3 +16,9 @@ and had it create the necessary gitreceive line
 
 In a programmers pursuit of ultimate laziness I have created a docker project that will do the above for you here:
 https://github.com/joshuacox/gitrecievelinemaker
+
+note that you will need to symlink gitreceive on the octohost to make them compatible with the default gitreceive key lines:
+```
+cd /usr/local/bin/
+ln -s /usr/bin/gitreceive ./
+```
