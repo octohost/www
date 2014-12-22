@@ -9,3 +9,4 @@
 5. [Simple Example Screencast](/screencast.html)
 6. [Persistent Data Stores](/data-stores.html)
 7. [octo cli](/octo-cli.html)
+8. [Virtual Hosting and additional Domain Names](http://blog.froese.org/2014/02/08/virtual-hosts-and-domain-names-with-octohost/)
