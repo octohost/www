@@ -4,14 +4,13 @@
 
 ## Working On
 
-* Splitting multiple tags in CONSUL_TAGS by commas.
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
 ## Unreleased
 
 * Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
-* Update to Docker 1.3.1.
+* Update to Docker 1.4.1.
 * Update to Consul 0.4.1.
 * Add Docker repository in a more reliable way.
 * Change to newer Consul cookbook.
