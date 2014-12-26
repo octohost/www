@@ -16,7 +16,8 @@
 * Change to newer Consul cookbook.
 * Merge [bugfix](https://github.com/octohost/octohost/pull/74) from lorello.
 * Set memory limits on containers via [config env](https://github.com/octohost/octohost/commit/72cfb2ed350c4d0628dcfe02b0a7240bf549518c).
-* Move all octohost config vars into an '/octohost/' prefix - will allow better integration with larger Consul cluster and allow ACL for '/octohost/' prefix.
+* Move all octohost config vars into an `/octohost/` prefix - will allow better integration with larger Consul cluster and allow ACL for `/octohost/` prefix.
+* Add ability to specify a custom check for the registered service in `/octohost/$service/CUSTOM_CHECK` - [Commit](https://github.com/octohost/octohost/commit/73f5b175d0248402584cb0ec7384c50901940009) and [screenshot](http://shared.froese.org/2014/bk3bu-15-12.jpg)
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
