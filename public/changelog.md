@@ -18,6 +18,9 @@
 * Set memory limits on containers via [config env](https://github.com/octohost/octohost/commit/72cfb2ed350c4d0628dcfe02b0a7240bf549518c).
 * Move all octohost config vars into an `/octohost/` prefix - will allow better integration with larger Consul cluster and allow ACL for `/octohost/` prefix.
 * Add ability to specify a custom check for the registered service in `/octohost/$service/CUSTOM_CHECK` - [Commit](https://github.com/octohost/octohost/commit/73f5b175d0248402584cb0ec7384c50901940009) and [screenshot](http://shared.froese.org/2014/bk3bu-15-12.jpg)
+* Add ability to specify a custom check interval for the registered service in `/octohost/$service/CUSTOM_CHECK_INTERVAL` - [Commit](https://github.com/octohost/octohost/commit/e2b1172bb8ba2e95fd3d928a2ada1f8b426e48e8)
+* Removed octoconfig and added Consul Template for configuration files.
+* Added a [Consul Watch](http://www.consul.io/docs/agent/watches.html) to update the nginx config whenever a container changes state. [Consul Watch Template](https://github.com/octohost/octohost-cookbook/commit/a8970569764acf523ea5a98f4bbee198c89c4078)
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
