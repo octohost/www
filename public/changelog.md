@@ -21,6 +21,8 @@
 * Add ability to specify a custom check interval for the registered service in `/octohost/$service/CUSTOM_CHECK_INTERVAL` - [Commit](https://github.com/octohost/octohost/commit/e2b1172bb8ba2e95fd3d928a2ada1f8b426e48e8)
 * Removed octoconfig and added Consul Template for configuration files.
 * Added a [Consul Watch](http://www.consul.io/docs/agent/watches.html) to update the nginx config whenever a container changes state. [Consul Watch Template](https://github.com/octohost/octohost-cookbook/commit/a8970569764acf523ea5a98f4bbee198c89c4078)
+* `octo reload {container}` now starts the number of containers specified in `/octohost/{container}/CONTAINERS`
+* Consul KV watch now reloads the container when anything changes inside of the KV space.
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
