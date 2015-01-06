@@ -22,7 +22,7 @@
 * Removed octoconfig and added Consul Template for configuration files.
 * Added a [Consul Watch](http://www.consul.io/docs/agent/watches.html) to update the nginx config whenever a container changes state. [Consul Watch Template](https://github.com/octohost/octohost-cookbook/commit/a8970569764acf523ea5a98f4bbee198c89c4078)
 * `octo reload {container}` now starts the number of containers specified in `/octohost/{container}/CONTAINERS`
-* Consul KV watch now reloads the container when anything changes inside of the KV space.
+* ~~Consul KV watch now reloads the container when anything changes inside of the KV space.~~ Disabled because of: [![hashicorp/consul/issues/571](https://github-shields.cfapps.io/github/hashicorp/consul/issues/571.svg)](https://github-shields.cfapps.io/github/hashicorp/consul/issues/571)
 
 ## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
