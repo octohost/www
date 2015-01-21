@@ -10,3 +10,4 @@
 6. [Persistent Data Stores](/data-stores.html)
 7. [octo cli](/octo-cli.html)
 8. [Virtual Hosting and additional Domain Names](http://blog.froese.org/2014/02/08/virtual-hosts-and-domain-names-with-octohost/)
+9. [How octohost uses Consul watches](http://blog.froese.org/2014/12/30/how-octohost-uses-consul-watches/)

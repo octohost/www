@@ -7,7 +7,11 @@ To Install Octohost
 
 1\. Build your AMI - clone the [octohost-cookbook](https://github.com/octohost/octohost-cookbook) repo and build using [Packer](http://www.packer.io/):
 
-`rake build_ami`
+```
+bundle install
+berks install
+rake build_ami
+```
 
 NOTE: The AMI in [template.json](https://github.com/octohost/octohost-cookbook/blob/master/template.json) has all of the proper required kernel extensions for Docker as well as [Chef](http://www.opscode.com/chef/) \(currently unused\) and [Ansible](https://github.com/ansible/ansible) provisioners. If you supply your own AMI, make sure it's got those items. You can rebuild build your own from [this repo](https://github.com/octohost/ubuntu-12.0.4-3.8).
 
@@ -35,7 +39,7 @@ PERMISSION	457992882886	octohost	ALLOWS	tcp	80	80	FROM	CIDR	0.0.0.0/0	ingress
 PERMISSION	457992882886	octohost	ALLOWS	tcp	443	443	FROM	CIDR	0.0.0.0/0	ingress
 ```
 
-3\. Create a running instance using your AMI \(or use ami-075e1837\) and security group:
+3\. Create a running instance using your AMI \(or use ami-ff9ac4cf\) and security group:
 
 `ec2-run-instances --key your-key -g sg-groupid ami-yourAMI --user-data-file user-data-file/setup --region us-west-2`
 
