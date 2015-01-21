@@ -14,6 +14,6 @@ deploy:
           git push $GIT_REMOTE master
   after-steps:
         - sherzberg/slack-notify:
-            subdomain: wercker
+            subdomain: ouisirfudge
             token: $SLACK_TOKEN
             channel: general
