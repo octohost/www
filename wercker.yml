@@ -16,4 +16,4 @@ deploy:
         - sherzberg/slack-notify:
             subdomain: ouisirfudge
             token: $SLACK_TOKEN
-            channel: general
+            channel: "#general"
