@@ -7,7 +7,7 @@
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
-## Unreleased
+## 1.4.1
 
 * Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
 * Update to Docker 1.4.1.
@@ -16,15 +16,17 @@
 * Change to newer Consul cookbook.
 * Merge [bugfix](https://github.com/octohost/octohost/pull/74) from lorello.
 * Set memory limits on containers via [config env](https://github.com/octohost/octohost/commit/72cfb2ed350c4d0628dcfe02b0a7240bf549518c).
-* Move all octohost config vars into an `/octohost/` prefix - will allow better integration with larger Consul cluster and allow ACL for `/octohost/` prefix.
+* Move all octohost config vars into an `/octohost/` prefix - will allow better integration with larger Consul clusters and allow ACL for `/octohost/` prefix.
 * Add ability to specify a custom check for the registered service in `/octohost/$service/CUSTOM_CHECK` - [Commit](https://github.com/octohost/octohost/commit/73f5b175d0248402584cb0ec7384c50901940009) and [screenshot](http://shared.froese.org/2014/bk3bu-15-12.jpg)
 * Add ability to specify a custom check interval for the registered service in `/octohost/$service/CUSTOM_CHECK_INTERVAL` - [Commit](https://github.com/octohost/octohost/commit/e2b1172bb8ba2e95fd3d928a2ada1f8b426e48e8)
 * Removed octoconfig and added Consul Template for configuration files.
 * Added a [Consul Watch](http://www.consul.io/docs/agent/watches.html) to update the nginx config whenever a container changes state. [Consul Watch Template](https://github.com/octohost/octohost-cookbook/commit/a8970569764acf523ea5a98f4bbee198c89c4078)
 * `octo reload {container}` now starts the number of containers specified in `/octohost/{container}/CONTAINERS`
 * ~~Consul KV watch now reloads the container when anything changes inside of the KV space.~~ Disabled because of: [![hashicorp/consul/issues/571](https://github-shields.cfapps.io/github/hashicorp/consul/issues/571.svg)](https://github-shields.cfapps.io/github/hashicorp/consul/issues/571)
+* Cleaned up stray services when stopping a container. [Commit](https://github.com/octohost/octohost/commit/1f8ad3c474130d38084922862f16816dd6f15dca)
+* If you're using the vagrant box, it installs the Consul web interface at [http://consul.octodev.io](http://consul.octodev.io)
 
-## 1.2.1 ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
+## 1.2.1 - ami-ef81c0df - \(ami-dc6cc1b4 in USE-1\)
 
 * Adjusted `octo move sites` to `octo move:sites`.
 * Added `octo move:config` to grab config from `octo config:export` on remote server and import locally. Great when you're moving / replacing an octohost.
