@@ -13,7 +13,7 @@ berks install
 rake build_ami
 ```
 
-NOTE: The AMI in [template.json](https://github.com/octohost/octohost-cookbook/blob/master/template.json) has all of the proper required kernel extensions for Docker as well as [Chef](http://www.opscode.com/chef/) \(currently unused\) and [Ansible](https://github.com/ansible/ansible) provisioners. If you supply your own AMI, make sure it's got those items. You can rebuild build your own from [this repo](https://github.com/octohost/ubuntu-12.0.4-3.8).
+NOTE: The AMI in [template.json](https://github.com/octohost/octohost-cookbook/blob/master/template.json) has all of the proper required kernel extensions for Docker as well as [Chef](http://www.opscode.com/chef/) \(currently unused\) and [Ansible](https://github.com/ansible/ansible) provisioners. If you supply your own AMI, make sure it's got those items. You can rebuild build your own from [this repo](https://github.com/octohost/ubuntu-14.04).
 
 2\. Create an AWS security group with port 80 and 443 open to the world, port 22 open to you and all ports open to other members of that group.
 
