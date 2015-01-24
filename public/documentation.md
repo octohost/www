@@ -11,3 +11,4 @@
 7. [octo cli](/octo-cli.html)
 8. [Virtual Hosting and additional Domain Names](http://blog.froese.org/2014/02/08/virtual-hosts-and-domain-names-with-octohost/)
 9. [How octohost uses Consul watches](http://blog.froese.org/2014/12/30/how-octohost-uses-consul-watches/)
+10. [DigitalOcean User data - launching your Packer built image](https://gist.github.com/darron/fbcf00c2a3ee88de27cf)
