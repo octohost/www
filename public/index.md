@@ -18,7 +18,7 @@ There are several ways to get it:
 
 2. An [Amazon AMI](https://github.com/octohost/octohost-cookbook).
 
-3. Digital Ocean [Droplet](https://github.com/octohost/octohost-cookbook)
+3. Digital Ocean [Droplet](https://github.com/octohost/octohost-cookbook) - [Installation Instructions](/digital-ocean-install.html)
 
 4. Rackspace [OpenStack Image](https://github.com/octohost/octohost-cookbook)
 

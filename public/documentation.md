@@ -4,7 +4,7 @@
 1. [Theory of Operation](/theory-of-operation.html)
 1. [Languages and Frameworks](/languages.html)
 2. [AWS Installation](/aws-install.html)
-10. [Digital Ocean Installation](https://gist.github.com/darron/fbcf00c2a3ee88de27cf)
+10. [Digital Ocean Installation](/digital-ocean-install.html)
 3. [Knife Solo Installation](/knife-solo.html)
 4. [Changelog](/changelog.html)
 5. [Simple Example Screencast](/screencast.html)
