@@ -16,7 +16,7 @@ There are several ways to get it:
 
 1. An already prepared [Vagrant box](https://github.com/octohost/octovagrant). With [integrated wildcard dns](http://octodev.io) for easy reference.
 
-2. An [Amazon AMI](https://github.com/octohost/octohost-cookbook).
+2. An [Amazon AMI](https://github.com/octohost/octohost-cookbook) - [Installation Instructions](/aws-install.html)
 
 3. Digital Ocean [Droplet](https://github.com/octohost/octohost-cookbook) - [Installation Instructions](/digital-ocean-install.html)
 
