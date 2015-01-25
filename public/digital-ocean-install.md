@@ -6,7 +6,7 @@
 
 3. Set that token as an Environment Variable:
 
-  `export DIGITALOCEAN_API_TOKEN="really-long-string-that-i-am-not-going-to-actually-show"`
+  `octohost$ export DIGITALOCEAN_API_TOKEN="really-long-string-that-i-am-not-going-to-actually-show"`
 
 4. Make sure you have [Packer](https://www.packer.io/downloads.html) installed. You should see similar output:
 
@@ -17,27 +17,27 @@
 
 5. Download the main cookbook:
 
-  `git clone https://github.com/octohost/octohost-cookbook.git`
+  `octohost$ git clone https://github.com/octohost/octohost-cookbook.git`
 
 6. Install the [Chef Development Kit](https://downloads.chef.io/chef-dk/):
 
   Add the ChefDK to your path:
 
-  `eval "$(chef shell-init bash)"`
+  `octohost$ eval "$(chef shell-init bash)"`
 
 7. Install the cookbooks we require:
 
   ```
-  cd octohost-cookbook
-  berks install # Sample output: https://gist.github.com/anonymous/90f895eca5fbbe731303
+  octohost$ cd octohost-cookbook
+  octohost$ berks install # Sample output: https://gist.github.com/anonymous/90f895eca5fbbe731303
   ```
 
 8. Build the "image" on Digital Ocean.
 
   ```
-  cd octohost-cookbook
-  berks vendor vendor/cookbooks
-  packer build -only=digitalocean template.json
+  octohost$ cd octohost-cookbook
+  octohost$ berks vendor vendor/cookbooks
+  octohost$ packer build -only=digitalocean template.json
   ```
 
   If it all goes well, you should see output something like this:
@@ -59,11 +59,11 @@
 
   You should see an 'octohost-chef' image on your [Images](https://cloud.digitalocean.com/images) page. It should look something like this:
 
-  <img src="http://shared.froese.org/2015/octohost-do-image.png" border="0" />
+  <img src="http://shared.froese.org/2015/octohost-do-image.jpg" border="0" />
 
 9. In order to use octohost you need to create a droplet using the image Packer just built for you. We will add some "User data" to help setup Consul for your new octohost. [Create a droplet](https://cloud.digitalocean.com/droplets/new) - give it a name, pick any size 1GB or above, select the same region and scroll down to here:
 
-  <img src="http://shared.froese.org/2015/octohost-do-userdata.png" border="0" />
+  <img src="http://shared.froese.org/2015/octohost-do-userdata.jpg" border="0" />
 
   Click on "Enable User Data" and enter the following:
 
@@ -104,7 +104,7 @@
 11. Now, let's try a simple html website to test that it's working:
 
   ```
-  cd ~/Desktop
+  octohost$ cd ~/Desktop
   octohost$ git clone https://github.com/octohost/html.git
   Cloning into 'html'...
   remote: Counting objects: 21, done.
@@ -129,6 +129,10 @@
 
   When you visit the website - it should look like this:
 
-  <img src="http://shared.froese.org/2015/octohost-do-html-site.png" border="0" />
+  <img src="http://shared.froese.org/2015/octohost-do-html-site.jpg" border="0" />
 
-Congratulations - you have successfully built and setup an octohost!
+Congratulations - you have successfully built and setup your very own octohost!
+
+You can now add additional sites [in these languages](/languages.html).
+
+If you'd like to remove the example html website - log into your droplet and run `octo remove html`
