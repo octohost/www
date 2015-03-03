@@ -7,6 +7,15 @@
 * Moving sites around will grab the already built image if it's in the registry.
 * Would like to rewrite the `octo` command and clean it up. When I have time.
 
+## 1.5 - Unreleased
+
+* Update to Docker 1.5.
+* Update to Consul 0.5 and Consul Template 0.7.
+* Use Consul http check rather than curl script by default - more efficient.
+* Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
+* Fix issues around NO_HTTP_PROXY
+* Add `octo version` command. [Example output](https://gist.github.com/darron/a911b63169bea012fd22).
+
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
 * Added MOUNT\_FROM\_HOST to mount the host filesystem into the docker container. [More info.](/data-stores.html) [Thanks Brandl!](https://github.com/octohost/octohost/issues/68)
