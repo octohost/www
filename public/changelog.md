@@ -18,6 +18,7 @@
 * Add some [simple logging](https://github.com/octohost/octohost/commit/c8c044d19e83b0f2163b140e4aefeaf99f3233a9).
 * Fixed some bugs related to the use of a private registry.
 * Force SSL for certain hosts - thanks to [Joshua Cox](https://github.com/octohost/octohost/issues/101).
+* Add Upstart configuration to [restart containers on reboot](https://github.com/octohost/octohost/issues/109).
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
