@@ -2,6 +2,9 @@ box: wercker/nodejs
 build:
   steps:
     - npm-install
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
 deploy:
   steps:
     - add-to-known_hosts:
@@ -13,7 +16,5 @@ deploy:
         code: |
           git push $GIT_REMOTE master
   after-steps:
-        - sherzberg/slack-notify:
-            subdomain: ouisirfudge
-            token: $SLACK_TOKEN
-            channel: "#general"
+      - wantedly/pretty-slack-notify:
+          webhook_url: $SLACK_WEBHOOK_URL
