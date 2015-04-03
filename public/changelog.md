@@ -10,7 +10,7 @@
 ## 1.5 - Unreleased
 
 * Update to Docker 1.5.
-* Update to Consul 0.5 and Consul Template 0.7.
+* Update to Consul 0.5 and Consul Template 0.8.
 * Use Consul http check rather than curl script by default - more efficient.
 * Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
 * Fix issues around NO_HTTP_PROXY
@@ -19,6 +19,9 @@
 * Fixed some bugs related to the use of a private registry.
 * Force SSL for certain hosts - thanks to [Joshua Cox](https://github.com/octohost/octohost/issues/101).
 * Add Upstart configuration to [restart containers on reboot](https://github.com/octohost/octohost/issues/109).
+* Removed Openresty in favor of nginx 1.7.11.
+* Update all packages during the build so that every install is fully patched when built.
+* Use Chef 12 during build now.
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
