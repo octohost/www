@@ -21,7 +21,8 @@
 * Add Upstart configuration to [restart containers on reboot](https://github.com/octohost/octohost/issues/109).
 * Removed Openresty in favor of nginx 1.7.11.
 * Update all packages during the build so that every install is fully patched when built.
-* Use Chef 12 during build now.
+* Use Chef 12 during the build.
+* Builds and operates on Azure. Use the [`knife solo`](http://www.octohost.io/knife-solo.html) instructions since the [`packer-azure`](https://github.com/MSOpenTech/packer-azure) plugin doesn't [appear to work](https://github.com/MSOpenTech/packer-azure/issues/59).
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 

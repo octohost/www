@@ -24,7 +24,7 @@ There are several ways to get it:
 
 5. Build your own somewhere else using [Packer](http://www.packer.io) and a set of [Chef cookbooks](https://github.com/octohost/octohost-cookbook).
 
-6. Build your own using `knife solo` - just need SSH access - [more info](/knife-solo.html). \(Added May 10, 2014.\)
+6. Build your own using `knife solo` - just need SSH access - [more info](/knife-solo.html). Works on [Azure](http://azure.microsoft.com/en-us/) too!
 
 7. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
 

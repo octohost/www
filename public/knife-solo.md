@@ -1,4 +1,4 @@
-## Install via Chef-Solo
+## Install via Knife-Solo
 
 Initially contributed by [Steffen Müller](https://github.com/steffenmllr) - added to the project as a Rake task.
 
