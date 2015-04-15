@@ -2,15 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## Working On
+## 1.6 - Unreleased
 
-* Moving sites around will grab the already built image if it's in the registry.
-* Would like to rewrite the `octo` command and clean it up. When I have time.
-
-## 1.5 - Unreleased
-
-* Update to Docker 1.5.
-* Update to Consul 0.5 and Consul Template 0.8.
+* Update to Docker 1.6. (When it's released shortly.)
+* Update to Consul 0.5.1 (shortly) and Consul Template 0.8.
 * Use Consul http check rather than curl script by default - more efficient.
 * Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
 * Fix issues around NO_HTTP_PROXY
@@ -22,7 +17,7 @@
 * Removed Openresty in favor of nginx 1.7.11.
 * Update all packages during the build so that every install is fully patched when built.
 * Use Chef 12 during the build.
-* Builds and operates on Azure. Use the [`knife solo`](http://www.octohost.io/knife-solo.html) instructions since the [`packer-azure`](https://github.com/MSOpenTech/packer-azure) plugin doesn't [appear to work](https://github.com/MSOpenTech/packer-azure/issues/59).
+* Builds and operates on Azure. Use the [`knife solo`](http://www.octohost.io/knife-solo.html) instructions if the [Packer Azure plugin](https://github.com/MSOpenTech/packer-azure/releases/tag/prerelease) isn't working for you.
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
