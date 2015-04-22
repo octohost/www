@@ -4,7 +4,7 @@
 
 ## 1.6 - Unreleased
 
-* Update to Docker 1.6. (When it's released shortly.)
+* Update to Docker 1.6.
 * Update to Consul 0.5.1 (shortly) and Consul Template 0.8.
 * Use Consul http check rather than curl script by default - more efficient.
 * Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
@@ -18,6 +18,7 @@
 * Update all packages during the build so that every install is fully patched when built.
 * Use Chef 12 during the build.
 * Builds and operates on Azure. Use the [`knife solo`](http://www.octohost.io/knife-solo.html) instructions if the [Packer Azure plugin](https://github.com/MSOpenTech/packer-azure/releases/tag/prerelease) isn't working for you.
+* Works with [Docker Swarm](https://github.com/docker/swarm) for some basic clustering. [Instructions](https://github.com/octohost/www/issues/6#issuecomment-95068509), [Demo](https://asciinema.org/a/19043).
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
