@@ -5,7 +5,8 @@
 ## 1.6 - Unreleased
 
 * Update to Docker 1.6.
-* Update to Consul 0.5.1 (shortly) and Consul Template 0.8.
+* Update to Consul 0.5.1 (shortly) and Consul Template 0.9.
+* Update to HVM AMI.
 * Use Consul http check rather than curl script by default - more efficient.
 * Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
 * Fix issues around NO_HTTP_PROXY
