@@ -15,11 +15,12 @@
 * Fixed some bugs related to the use of a private registry.
 * Force SSL for certain hosts - thanks to [Joshua Cox](https://github.com/octohost/octohost/issues/101).
 * Add Upstart configuration to [restart containers on reboot](https://github.com/octohost/octohost/issues/109).
-* Removed Openresty in favor of nginx 1.7.11.
+* Removed Openresty in favor of nginx 1.8.0.
 * Update all packages during the build so that every install is fully patched when built.
 * Use Chef 12 during the build.
 * Builds and operates on Azure. Use the [`knife solo`](http://www.octohost.io/knife-solo.html) instructions if the [Packer Azure plugin](https://github.com/MSOpenTech/packer-azure/releases/tag/prerelease) isn't working for you.
 * Works with [Docker Swarm](https://github.com/docker/swarm) for some basic clustering. [Instructions](https://github.com/octohost/www/issues/6#issuecomment-95068509), [Demo](https://asciinema.org/a/19043).
+* Added mod_pagespeed to the [nginx build](https://github.com/darron/nginx-build) - not enabled by default. Configuration to enable is [located here](https://gist.github.com/darron/5604cefb982b8bfcc338).
 
 ## 1.4.1 - ami-ff9ac4cf \(ami-5e334b36 in USE-1\)
 
