@@ -2,10 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
-## 1.6 - Unreleased
+## 1.6 - ami-67e0d057 \(ami-e8786e80 in USE-1\)
 
 * Update to Docker 1.6.
-* Update to Consul 0.5.1 (shortly) and Consul Template 0.9.
+* Update to Consul 0.5.0 (compiled from master) and Consul Template 0.9.
 * Update to HVM AMI.
 * Use Consul http check rather than curl script by default - more efficient.
 * Fix a whole bunch of issues around pushing branches and the '/' character in branch names.
