@@ -2,6 +2,10 @@
 
 ### NOTE: All AMIs are in USW-2.
 
+## Unreleased
+
+* Add ability to specify a custom Nginx template on a per container basis. [Original PR](https://github.com/octohost/octohost/pull/125), [Merged PR](https://github.com/octohost/octohost/pull/130) - Thanks [Joshua!](https://github.com/joshuacox)
+
 ## 1.6 - ami-67e0d057 \(ami-e8786e80 in USE-1\)
 
 * Update to Docker 1.6.
