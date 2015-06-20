@@ -5,6 +5,7 @@
 ## Unreleased
 
 * Update to Docker 1.7
+* Update to Consul 0.5.2 and Consul Template 0.10.0.
 * Add ability to specify a custom Nginx template on a per container basis. [Original PR](https://github.com/octohost/octohost/pull/125), [Merged PR](https://github.com/octohost/octohost/pull/130) - Thanks [Joshua!](https://github.com/joshuacox)
 * Installed [Vault](https://www.vaultproject.io/) - want to secure the ENV vars stored in Consul.
 * [Better removal](https://github.com/octohost/octohost/commit/0819f6ce833f72e91f05546d09875f3b0a08ac27) of exited containers and untagged images.
