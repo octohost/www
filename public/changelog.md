@@ -6,6 +6,7 @@
 
 * Update to Docker 1.7
 * Update to Consul 0.5.2 and Consul Template 0.10.0.
+* [Added ZFS utilities](https://github.com/octohost/octohost-cookbook/commit/472e8c10768b945f75da8eb4ecd0a6461a67d2d1) - [example configuration](https://gist.github.com/darron/89a5e46599b0ab8937c1). NOTE: This is NOT a ZFS root.
 * Add ability to specify a custom Nginx template on a per container basis. [Original PR](https://github.com/octohost/octohost/pull/125), [Merged PR](https://github.com/octohost/octohost/pull/130) - Thanks [Joshua!](https://github.com/joshuacox)
 * Installed [Vault](https://www.vaultproject.io/) - want to secure the ENV vars stored in Consul.
 * [Better removal](https://github.com/octohost/octohost/commit/0819f6ce833f72e91f05546d09875f3b0a08ac27) of exited containers and untagged images.
