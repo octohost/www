@@ -6,12 +6,13 @@
 
 * Update to Docker 1.7
 * Update to Consul 0.5.2 and Consul Template 0.10.0.
-* [Added ZFS utilities](https://github.com/octohost/octohost-cookbook/commit/472e8c10768b945f75da8eb4ecd0a6461a67d2d1) - [example configuration](https://gist.github.com/darron/89a5e46599b0ab8937c1). NOTE: This is NOT a ZFS root.
+* [Added ZFS utilities](https://github.com/octohost/octohost-cookbook/commit/472e8c10768b945f75da8eb4ecd0a6461a67d2d1) - [example configuration](https://gist.github.com/darron/89a5e46599b0ab8937c1). NOTE: This is NOT a ZFS root and could eat your data.
 * Add ability to specify a custom Nginx template on a per container basis. [Original PR](https://github.com/octohost/octohost/pull/125), [Merged PR](https://github.com/octohost/octohost/pull/130) - Thanks [Joshua!](https://github.com/joshuacox)
 * Installed [Vault](https://www.vaultproject.io/) - want to secure the ENV vars stored in Consul.
 * [Better removal](https://github.com/octohost/octohost/commit/0819f6ce833f72e91f05546d09875f3b0a08ac27) of exited containers and untagged images.
 * [Always restart](https://github.com/octohost/octohost/commit/5a689433e9a5978366122d8dfc812f40689869ea) all logging containers.
 * Remove spurious [extra lines](https://github.com/octohost/octohost-cookbook/commit/05f9167248709746a153d9e23626af9ea9a8ef15) from `consulkv`.
+* Add Terraform single node deploys for [AWS](https://github.com/octohost/octohost-cookbook/tree/master/terraform/aws-single) and [DigitalOcean](https://github.com/octohost/octohost-cookbook/tree/master/terraform/do-single). Because we can't easily share DigitalOcean images, you have to still build your own image.
 
 ## 1.6 - ami-67e0d057 \(ami-e8786e80 in USE-1\)
 
