@@ -26,7 +26,7 @@ There are several ways to get it:
 
 6. Build your own using `knife solo` - just need SSH access - [more info](/knife-solo.html). Works on [Azure](http://azure.microsoft.com/en-us/) too!
 
-7. _Deprecated_: An [Ansible playbook](https://github.com/octohost/octohost) we used to kick off the project.
+7. Terraform Code to launch on AWS, DigitalOcean and Rackspace - [more info](https://github.com/octohost/octohost-cookbook/tree/master/terraform)
 
 ## Advanced quickstart with AWS
 
