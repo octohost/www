@@ -15,7 +15,7 @@
 * [Always restart](https://github.com/octohost/octohost/commit/5a689433e9a5978366122d8dfc812f40689869ea) all logging containers.
 * Remove spurious [extra lines](https://github.com/octohost/octohost-cookbook/commit/05f9167248709746a153d9e23626af9ea9a8ef15) from `consulkv`.
 * Add Terraform single node deploys for [AWS](https://github.com/octohost/octohost-cookbook/tree/master/terraform/aws-single),  [DigitalOcean](https://github.com/octohost/octohost-cookbook/tree/master/terraform/do-single) and [Rackspace](https://github.com/octohost/octohost-cookbook/tree/master/terraform/openstack-single). Because we can't easily share Rackspace or DigitalOcean images, you have to still build your own octohost image.
-* Added Docker Images to build for [AWS](https://hub.docker.com/r/octohost/build-aws/) or [Digital Ocean](https://hub.docker.com/r/octohost/build-do/).
+* Added Docker images for really easy builds for [AWS](https://hub.docker.com/r/octohost/build-aws/) or [Digital Ocean](https://hub.docker.com/r/octohost/build-do/).
 
 ## 1.6 - ami-67e0d057 \(ami-e8786e80 in USE-1\)
 
