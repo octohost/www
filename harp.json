@@ -1,8 +1,0 @@
-{
-  "globals": {
-    "title": "octohost",
-    "name"  : "Darron Froese",
-    "uri": "http://www.octohost.io",
-    "description": "Simple web focused Docker based mini-PaaS server."
-  }
-}

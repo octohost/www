@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    octohost - Simple web focused Docker based mini-PaaS server.
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/octohost.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12346486-7', 'octohost.io');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body class="theme-base-0g">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>octohost</h1>
+      <p class="lead">Simple web focused Docker based mini-PaaS server.</p>
+    </div>
+
+    <div><strong>NOTE:</strong> This project is no longer actively maintained. Use <a href="https://github.com/dokku/dokku">Dokku</a> or <a href="https://github.com/kubernetes/kubernetes">Kubernetes</a>.</div>
+
+    <p>&nbsp;</p>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Home</a></li>
+      <li class="sidebar-nav-item"><a href="/languages.html">Languages and Frameworks</a></li>
+      <li class="sidebar-nav-item"><a href="/documentation.html">Documentation</a></li>
+      <li class="sidebar-nav-item"><a href="/screencast.html">Screencast</a></li>
+      <li class="sidebar-nav-item"><a href="/changelog.html">Changelog</a></li>
+      <li class="sidebar-nav-item"><a href="https://twitter.com/octohost">@octohost</a></li>
+      <li class="sidebar-nav-item"><a href="https://github.com/octohost">Github Project</a></li>
+      <li class="sidebar-nav-item"><a href="https://index.docker.io/u/octohost/">Docker INDEX</a></li>
+    </ul>
+
+    <p>&copy; 2014 - 2106. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h2>Data Stores</h2><h3>NOTE: Released at 0.8.1 - but think it shouldn&#39;t be used. All data should be stored remotely. <a href="http://blog.froese.org/2014/03/17/using-octohost-with-heroku-addons/">Here&#39;s an example.</a></h3><h4>Please send feedback to <a href="mailto:darron@froese.org">Darron</a></h4><p>We want to make several data stores available through linked Docker containers:</p>
+<ol>
+<li><a href="/data-stores-redis.html">Redis</a></li>
+<li>MySQL</li>
+<li><a href="/data-stores-memcached.html">Memcached</a></li>
+<li>PostgreSQL</li>
+</ol>
+<p>NOTE: There is currently a single linked container per application. You can use Redis OR Memcached but not both. That may be rectified in a future release.</p>
+<h3>We have added some &quot;magic&quot; Dockerfile comments.</h3><ol>
+<li>NO_HTTP_PROXY - tell octohost <em>not</em> to add records to the reverse HTTP proxy - this shouldn&#39;t be accessible via HTTP.</li>
+<li>ADD_NAME - In order <a href="https://docs.docker.io/en/latest/use/working_with_links_names/">to link containers together or use volumes from another container</a>, you need to know the container&#39;s name. This tells octohost to name the container the same name as the git repo. This is a predictable name that won&#39;t clash with any other name because sites on an octohost are unique. (Otherwise Docker gives them a unique random name.)</li>
+<li>VOLUMES_FROM - To <a href="https://docs.docker.io/en/latest/use/working_with_links_names/">use a volume from a data only container</a> this tells octohost to look for a container named &quot;currentgitreponame_data&quot;</li>
+<li>LINK_SERVICE - To <a href="https://docs.docker.io/en/latest/use/working_with_links_names/">link to a container with a running data store</a>, this comment tells octohost to link to a container named &#39;currentgitreponame_servicename&#39;. If you were using Redis, and your git repo was called &#39;awesomewebsite&#39;, it would look for &#39;awesomewebsite_redis&#39; with the alias &#39;redis&#39;.</li>
+<li>MOUNT_FROM_HOST - Mount data from the host filesystem into the container filesystem.</li>
+</ol>
+<p>NOTE: If your service container is named differently you can specify the name:</p>
+<p><code># LINK_SERVICE redis container_name_goes_here</code></p>
+<p>OR</p>
+<p><code># LINK_SERVICE memcached container_name_goes_here</code></p>
+<p>Also:</p>
+<pre><code class="language-bash"># MOUNT_FROM_HOST /etc/data
+</code></pre>
+<p>results in <code>-v /etc/data:/etc/data</code>, which mounts /etc/data to the container filesystem</p>
+<pre><code class="language-bash"># MOUNT_FROM_HOST /host/data/docker-data /docker/container/data
+</code></pre>
+<p>results in <code>-v /host/data/docker-data:/docker/container/data</code>, which mounts/host/data/docker-data  from the host filesystem to /docker/container/data on the container</p>
+<p>(Hint: be aware, that file owner and permissions have to match in order for the container to read/write on the mounted folder!)</p>
+      <p>Send us an email at <a href="mailto:octohost@octohost.io">octohost@octohost.io</a>. Follow us on Twitter <a href="https://twitter.com/octohost">@octohost</a>.</p>
+
+      <div class="src"><a href="https://github.com/octohost/www">Website source.</a></div>
+    </div>
+
+  </body>
+</html>

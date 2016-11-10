@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    Changelog for octohost - Simple web focused Docker based mini-PaaS server.
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/octohost.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12346486-7', 'octohost.io');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body class="theme-base-0g">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>octohost</h1>
+      <p class="lead">Simple web focused Docker based mini-PaaS server.</p>
+    </div>
+
+    <div><strong>NOTE:</strong> This project is no longer actively maintained. Use <a href="https://github.com/dokku/dokku">Dokku</a> or <a href="https://github.com/kubernetes/kubernetes">Kubernetes</a>.</div>
+
+    <p>&nbsp;</p>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Home</a></li>
+      <li class="sidebar-nav-item"><a href="/languages.html">Languages and Frameworks</a></li>
+      <li class="sidebar-nav-item"><a href="/documentation.html">Documentation</a></li>
+      <li class="sidebar-nav-item"><a href="/screencast.html">Screencast</a></li>
+      <li class="sidebar-nav-item"><a href="/changelog.html">Changelog</a></li>
+      <li class="sidebar-nav-item"><a href="https://twitter.com/octohost">@octohost</a></li>
+      <li class="sidebar-nav-item"><a href="https://github.com/octohost">Github Project</a></li>
+      <li class="sidebar-nav-item"><a href="https://index.docker.io/u/octohost/">Docker INDEX</a></li>
+    </ul>
+
+    <p>&copy; 2014 - 2106. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h2>Changelog</h2><h3>NOTE: All AMIs are in USW-2.</h3><h2>Unreleased</h2><h2>1.9.1</h2><ul>
+<li>Update to Docker 1.9.1</li>
+<li>Update to Consul 0.6.0 and Consul Template 0.11.1.</li>
+<li><a href="https://github.com/octohost/octohost-cookbook/commit/472e8c10768b945f75da8eb4ecd0a6461a67d2d1">Added ZFS utilities</a> - <a href="https://gist.github.com/darron/89a5e46599b0ab8937c1">example configuration</a>. NOTE: This is NOT a ZFS root and could eat your data.</li>
+<li>Add ability to specify a custom Nginx template on a per container basis. <a href="https://github.com/octohost/octohost/pull/125">Original PR</a>, <a href="https://github.com/octohost/octohost/pull/130">Merged PR</a> - Thanks <a href="https://github.com/joshuacox">Joshua!</a></li>
+<li>Installed <a href="https://www.vaultproject.io/">Vault</a> - want to secure the ENV vars stored in Consul.</li>
+<li><a href="https://github.com/octohost/octohost/commit/0819f6ce833f72e91f05546d09875f3b0a08ac27">Better removal</a> of exited containers and untagged images.</li>
+<li><a href="https://github.com/octohost/octohost/commit/5a689433e9a5978366122d8dfc812f40689869ea">Always restart</a> all logging containers.</li>
+<li>Remove spurious <a href="https://github.com/octohost/octohost-cookbook/commit/05f9167248709746a153d9e23626af9ea9a8ef15">extra lines</a> from <code>consulkv</code>.</li>
+<li>Add Terraform single node deploys for <a href="https://github.com/octohost/octohost-cookbook/tree/master/terraform/aws-single">AWS</a>,  <a href="https://github.com/octohost/octohost-cookbook/tree/master/terraform/do-single">DigitalOcean</a> and <a href="https://github.com/octohost/octohost-cookbook/tree/master/terraform/openstack-single">Rackspace</a>. Because we can&#39;t easily share Rackspace or DigitalOcean images, you have to still build your own octohost image.</li>
+<li>Added Docker images for really easy builds for <a href="https://hub.docker.com/r/octohost/build-aws/">AWS</a> or <a href="https://hub.docker.com/r/octohost/build-do/">Digital Ocean</a>.</li>
+</ul>
+<h2>1.6 - ami-67e0d057 (ami-e8786e80 in USE-1)</h2><ul>
+<li>Update to Docker 1.6.</li>
+<li>Update to Consul 0.5.0 (compiled from master) and Consul Template 0.9.</li>
+<li>Update to HVM AMI.</li>
+<li>Use Consul http check rather than curl script by default - more efficient.</li>
+<li>Fix a whole bunch of issues around pushing branches and the &#39;/&#39; character in branch names.</li>
+<li>Fix issues around NO_HTTP_PROXY</li>
+<li>Add <code>octo version</code> command. <a href="https://gist.github.com/darron/a911b63169bea012fd22">Example output</a>.</li>
+<li>Add some <a href="https://github.com/octohost/octohost/commit/c8c044d19e83b0f2163b140e4aefeaf99f3233a9">simple logging</a>.</li>
+<li>Fixed some bugs related to the use of a private registry.</li>
+<li>Force SSL for certain hosts - thanks to <a href="https://github.com/octohost/octohost/issues/101">Joshua Cox</a>.</li>
+<li>Add Upstart configuration to <a href="https://github.com/octohost/octohost/issues/109">restart containers on reboot</a>.</li>
+<li>Removed Openresty in favor of nginx 1.8.0.</li>
+<li>Update all packages during the build so that every install is fully patched when built.</li>
+<li>Use Chef 12 during the build.</li>
+<li>Builds and operates on Azure. Use the <a href="http://www.octohost.io/knife-solo.html"><code>knife solo</code></a> instructions if the <a href="https://github.com/MSOpenTech/packer-azure/releases/tag/prerelease">Packer Azure plugin</a> isn&#39;t working for you.</li>
+<li>Works with <a href="https://github.com/docker/swarm">Docker Swarm</a> for some basic clustering. <a href="https://github.com/octohost/www/issues/6#issuecomment-95068509">Instructions</a>, <a href="https://asciinema.org/a/19043">Demo</a>.</li>
+<li>Added mod_pagespeed to the <a href="https://github.com/darron/nginx-build">nginx build</a> - not enabled by default. Configuration to enable is <a href="https://gist.github.com/darron/5604cefb982b8bfcc338">located here</a>.</li>
+</ul>
+<h2>1.4.1 - ami-ff9ac4cf (ami-5e334b36 in USE-1)</h2><ul>
+<li>Added MOUNT_FROM_HOST to mount the host filesystem into the docker container. <a href="/data-stores.html">More info.</a> <a href="https://github.com/octohost/octohost/issues/68">Thanks Brandl!</a></li>
+<li>Update to Docker 1.4.1.</li>
+<li>Update to Consul 0.4.1.</li>
+<li>Add Docker repository in a more reliable way.</li>
+<li>Change to newer Consul cookbook.</li>
+<li>Merge <a href="https://github.com/octohost/octohost/pull/74">bugfix</a> from lorello.</li>
+<li>Set memory limits on containers via <a href="https://github.com/octohost/octohost/commit/72cfb2ed350c4d0628dcfe02b0a7240bf549518c">config env</a>.</li>
+<li>Move all octohost config vars into an <code>/octohost/</code> prefix - will allow better integration with larger Consul clusters and allow ACL for <code>/octohost/</code> prefix.</li>
+<li>Add ability to specify a custom check for the registered service in <code>/octohost/$service/CUSTOM_CHECK</code> - <a href="https://github.com/octohost/octohost/commit/73f5b175d0248402584cb0ec7384c50901940009">Commit</a> and <a href="http://shared.froese.org/2014/bk3bu-15-12.jpg">screenshot</a></li>
+<li>Add ability to specify a custom check interval for the registered service in <code>/octohost/$service/CUSTOM_CHECK_INTERVAL</code> - <a href="https://github.com/octohost/octohost/commit/e2b1172bb8ba2e95fd3d928a2ada1f8b426e48e8">Commit</a></li>
+<li>Removed octoconfig and added Consul Template for configuration files.</li>
+<li>Added a <a href="http://www.consul.io/docs/agent/watches.html">Consul Watch</a> to update the nginx config whenever a container changes state. <a href="https://github.com/octohost/octohost-cookbook/commit/a8970569764acf523ea5a98f4bbee198c89c4078">Consul Watch Template</a></li>
+<li><code>octo reload {container}</code> now starts the number of containers specified in <code>/octohost/{container}/CONTAINERS</code></li>
+<li><del>Consul KV watch now reloads the container when anything changes inside of the KV space.</del> Disabled because of: <a href="https://github-shields.cfapps.io/github/hashicorp/consul/issues/571"><img src="https://github-shields.cfapps.io/github/hashicorp/consul/issues/571.svg" alt="hashicorp/consul/issues/571"></a></li>
+<li>Cleaned up stray services when stopping a container. <a href="https://github.com/octohost/octohost/commit/1f8ad3c474130d38084922862f16816dd6f15dca">Commit</a></li>
+<li>If you&#39;re using the vagrant box, it installs the Consul web interface at <a href="http://consul.octodev.io">http://consul.octodev.io</a></li>
+</ul>
+<h2>1.2.1 - ami-ef81c0df - (ami-dc6cc1b4 in USE-1)</h2><ul>
+<li>Adjusted <code>octo move sites</code> to <code>octo move:sites</code>.</li>
+<li>Added <code>octo move:config</code> to grab config from <code>octo config:export</code> on remote server and import locally. Great when you&#39;re moving / replacing an octohost.</li>
+<li>Added <code>octo move:redis to grab Redis keys from remote Redis server.</code></li>
+<li>Update to Consul 0.4.</li>
+<li>Bugfix from <a href="https://github.com/octohost/octohost/pull/67">Brandl</a>.</li>
+</ul>
+<h2>1.2 - ami-075e1837 - (ami-7265c31a in USE-1)</h2><ul>
+<li>Update to <a href="https://blog.docker.com/2014/08/announcing-docker-1-2-0/">Docker 1.2.0</a>.</li>
+<li>Fully patched and updated with all current Ubuntu updates.</li>
+<li>The <code>octo</code> MySQL plugin will no longer try and restart <a href="https://github.com/octohost/mysql-plugin/commit/a4c6bb0add8c37064ed6e716ec9addb89368c38f">non-running containers</a>.</li>
+<li>Added <a href="https://github.com/darron/docker-cookbook/commit/f48a83edf9918550bc4b43081ef5d6886b899172">nsenter and docker-enter</a> to default install.</li>
+<li>Added additional folder for <a href="https://github.com/octohost/octohost-cookbook/commit/294b06f6692bc8ac11be388cf6afa0a1e355bb88">manually configured nginx virtualhosts</a>. A great way to expose <a href="http://www.consul.io">Consul</a> if you&#39;d like to. <a href="https://gist.github.com/darron/3f19aa600abf044b3918">Example nginx config here.</a></li>
+<li>Don&#39;t have to use Xip.io if <a href="https://github.com/octohost/octohost/commit/41c8d045b14788436ce4c236da12e1c7f5dbf67d">you don&#39;t want to</a>.</li>
+<li>Added more commonly used <code>octo -h</code> and <code>octo --help</code>.</li>
+<li>Added <a href="https://github.com/octohost/octohost/commit/d8ab8c5253bff2f1c4cbc445d132853ab0227126">LINK_PREFIX to make URLs configureable</a>.</li>
+<li>Use sudo wherever it&#39;s needed. <a href="https://github.com/octohost/octohost/commit/0e80005e86a591d2dc8b9e5bca06b8414b3b0dfe">Don&#39;t have to be root</a>.</li>
+<li>Only <a href="https://github.com/octohost/octohost/commit/86456265412bb966029fb13ce77891161fb3f3bf">register services that match</a> $BUILD_ORG_NAME.</li>
+<li>Fixed <code>octo services:clear</code> to <a href="https://github.com/octohost/octohost/commit/0c9a5737e4270507e253a5fd079038865aeef6c4">properly clear out the services</a> from abnormally stopped containers.</li>
+<li>Fixed the <code>octo status</code> command to use Consul health check data rather than an additional, unreliable http check.</li>
+<li>Handle environment variables with spaces in them. Thanks to <a href="https://github.com/bltavares">Bruno Lara Tavares</a>.</li>
+</ul>
+<h2>1.1 - ami-cd1b62fd</h2><ul>
+<li>Docker 1.1.1</li>
+<li>Moved from etcd to Consul for ENV variables.</li>
+<li>Registered each container as a Consul Service - using <code>octo service:set</code></li>
+<li>Automatically tag all Consul Services with &#39;http&#39; unless they&#39;re set in the CONSUL_TAGS ENV variable. Used the same ENV variable as <a href="https://github.com/progrium/docksul">docksul</a>.</li>
+<li>Show all Consul Services on a host - using <code>octo services</code></li>
+<li>Show all Consul Services in the cluster - using <code>octo services:catalog</code></li>
+<li>Added <code>octo start|stop</code> that work on containers with source and images you have built but haven&#39;t &quot;pushed&quot; over.</li>
+<li><code>octo start {container} {n}</code> will launch n number of containers.</li>
+<li>Added <code>octo reload</code> to stop and start images while reloading any ENV vars and configuration.</li>
+<li>Clarified <code>octo restart</code> - it rebuilds from source and restarts the container.</li>
+<li>Added <code>octo config:env</code> - to grab ENV vars from Consul.</li>
+<li>If the &#39;http&#39; tag is present, add a simple http health check.</li>
+<li>Added the ability to <a href="https://github.com/octohost/octohost/blob/master/bin/octo#L541-L567">push and pull from a private registry</a>.</li>
+<li>If PRIVATE_REGISTRY is defined, <a href="https://github.com/octohost/octohost/blob/master/bin/receiver.sh#L138-L141">push the image automatically after you&#39;re done building</a>.</li>
+<li>Building nginx configuration from Consul Service information. <a href="https://github.com/octohost/octoconfig">octoconfig does this</a></li>
+<li>Integrating multiple containers with nginx. octoconfig generates config files that use all active containers.</li>
+<li>For a container called &#39;website&#39; if you set an environment config <code>octo config:set website/CONTAINERS 5</code> it will launch <code>5</code> containers for you on each push. It launches the new containers first, then kills the old containers one by one.</li>
+</ul>
+<h2>1.0 - ami-6799eb57</h2><ul>
+<li><a href="http://blog.docker.com/2014/06/its-here-docker-1-0/">Docker 1.0</a></li>
+<li>Add <code>octo config:export</code> command to <a href="https://github.com/octohost/octohost/commit/7849e530cc80149d05b004c94bcc49bec49ecd47">get all config variables</a>. Can update with <code>octo update</code></li>
+</ul>
+<h2>0.12 - ami-8d6416bd</h2><ul>
+<li><a href="https://github.com/dotcloud/docker/blob/master/CHANGELOG.md">Docker 0.12</a></li>
+<li>Updated Ubuntu with OpenSSL CCS patched.</li>
+<li>Added apparmor and apparmor-utils - seems to help with strange Apparmor problems on Ubuntu 14.04LTS.</li>
+<li>Containers without any exposed ports weren&#39;t able to launch properly. <a href="https://github.com/octohost/octohost/commit/747ec50bbaef5ab3622d1a3e70d61cf874acd07b">Now they are.</a></li>
+<li>Containers without any exposed ports weren&#39;t killing the old container. <a href="https://github.com/octohost/octohost/commit/7afd14a75ec9a13ef8c23258d39849c811d04004">Now they are.</a></li>
+<li>Add updated etcd init file so that it starts from scratch the next time it boots.</li>
+</ul>
+<h2>0.11.1.1 - ami-cd1161fd</h2><ul>
+<li>Added <code>octo update</code> to pull the current octo command down from github.</li>
+<li>Added help text when you run <code>octo help</code></li>
+<li>Got Rackspace support working properly with PRIVATE_IP and firewall.</li>
+<li>Added <code>knife solo</code> support - <code>rake knife_solo user=root ip=555.55.555.5</code> - works on Linode - should work on others.</li>
+<li>Fix quoting when adding config variables with <a href="https://github.com/octohost/octohost/commit/0752bfec0af38947c38b1544ce0bee18b8608261">Bash special characters</a>.</li>
+<li>Added <a href="https://github.com/octohost/php5-apache">PHP5-Apache</a>.</li>
+<li>Added <a href="https://github.com/octohost/wordpress">WordPress</a>.</li>
+<li>Added <a href="https://github.com/progrium/logspout">logspout</a> - controlled through <code>octo logspout {pull|start|stop}</code> - <a href="https://github.com/octohost/octohost/commit/855e26ec1c69808e1a1c1d04c644f0b8eecde339">commit</a></li>
+<li>Added &#39;octo logs start {full-path} {mount}&#39; - to send any logs to remote syslog through <a href="https://github.com/octohost/remote_syslog">octohost/remote_syslog</a></li>
+<li>Added &#39;octo logs octologs:start|octologs:stop&#39; - sends nginx and Docker logs to remote syslog in a single container.</li>
+<li>Re-added <a href="https://github.com/darron/docker-cookbook/commit/23d3af52bf1af46d5661c53ad6dad4ece7b99e23">package that enables AUFS</a> instead of Devicemapper for 14.04.</li>
+<li>Added the first pass at a plugin system for the &#39;octo&#39; command. A <a href="https://github.com/octohost/mysql-plugin">mysql</a> plugin is first - it doesn&#39;t really do anything yet.</li>
+<li>Fixed the <a href="https://www.digitalocean.com/">@digitalocean</a> build by <a href="https://github.com/darron/fpm-recipes/commit/79f5b4d6a7fb569f96f0fc47576072cc1dc2188c">updating the nginx.conf</a> inside the openresty deb file. Thanks to <a href="https://github.com/philholden">@philholden</a> for filing the bug and taking a stab at fixing it.</li>
+</ul>
+<h2>0.11.1 - ami-7d2a5c4d</h2><ul>
+<li>Update to Docker 0.11.1.</li>
+<li>Update to <a href="https://github.com/octohost/ubuntu-14.04">Ubuntu 14.04LTS</a>.</li>
+<li>Added SPDY support to nginx.</li>
+<li>Added GeoIP databases and configure geoip module.</li>
+<li>Added additional <a href="https://github.com/octohost/octohost-cookbook/commit/49381260b7505aadc5be4ae0fb3120a32bdd0ef3">open file caching and headers</a>.</li>
+<li>Added X-Request-Id header to nginx. Using <a href="https://github.com/octohost/ngx_txid">ngx_txid</a>.</li>
+<li>Added firewall to non EC2 builds. Ports 22, 80 and 443 are open by default.</li>
+<li>Add hostname and X-Request-Id to proxy logs.</li>
+<li>Extract duplicated variables from /usr/bin/octo and /home/git/receiver to /etc/default/octohost.</li>
+<li>If Docker <a href="https://github.com/octohost/octohost/commit/d3b95255f279c4e8e4a867fd23b58bc32ca43866">doesn&#39;t launch the container, try again</a>.</li>
+</ul>
+<h2>0.10.0.1 - ami-8ca8c2bc - (ami-e5cfd18c in USE-1)</h2><ul>
+<li>Actually use proper Heartbleed proof base image. If you are using 0.10.0 or 0.9.1.1 - please &#39;apt-get update; apt-get upgrade; service hipache restart&#39; to be sure.</li>
+<li>Remove Hipache and add nginx as the proxy. Massive speed increases (15x on an m3.medium). Huge thanks to <a href="https://github.com/alkema">@alkema</a> who made this happen.</li>
+<li>Enable PFS for nginx SSL.</li>
+<li>Addition of <code>octo proxy:get</code>, <code>octo proxy:set</code> and <code>octo proxy:rm</code> for nginx config paves the way for clusters of octohosts.</li>
+<li>Move nginx virtualhost api interface to <a href="https://github.com/octohost/tentacles">octohost/tentacles</a> container.</li>
+<li>Add <code>octo tentacles</code> command to start|stop|pull octohost/tentacles container.</li>
+<li>Addition of gzip encoding to outbound proxied requests.</li>
+<li>Addition of <a href="https://github.com/lebinh/ngxtop">ngxtop</a>.</li>
+<li>Actually install <a href="https://github.com/octohost/octohost-cookbook/commit/380402075c5f45955299a816387247511a6e81de">sysdig</a>.</li>
+<li>Removed Serf - not being used.</li>
+<li>Made Redis listen on all interfaces so that it can be used from the octohost/tentacles container.</li>
+<li>Update Docker cookbook to fix startup workarounds. (Had to re-add the workarounds.)</li>
+</ul>
+<h2>0.10.0 - ami-86fc97b6</h2><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/blob/release-0.10/CHANGELOG.md">Docker 0.10</a>.</li>
+<li>Update bin/octo to <a href="https://github.com/octohost/octohost/commit/e99572058e87f4c3cd1bd4fc6ca5243a4b340848">look for proper name</a>.</li>
+</ul>
+<h2>0.9.1.1 - ami-ba8be08a</h2><ul>
+<li>Update base Ubuntu VM with all updates and patches.</li>
+<li>Added <a href="http://www.sysdig.org/">Sysdig</a></li>
+<li>Updated OpenSSL that fixes <a href="http://heartbleed.com">Heartbleed</a>.</li>
+</ul>
+<h2>0.9.1 - ami-e29ff7d2</h2><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/commit/d36176652ef8f0220a1cff5dc00933400c69a562#diff-4ac32a78649ca5bdd8e0ba38b7006a1e">Docker 0.9.1</a></li>
+<li><a href="https://github.com/octohost/octohost-cookbook/commit/a934ce86eeaa8f2fc66713d6fa8f7d4fb110ccb0">Add</a> vagrant, ubuntu and git users to docker group - so that they can do things without sudo.</li>
+<li><a href="https://github.com/octohost/octohost/commit/0e3aa7f838e92139ef13a8b15b331baf1f93752e">Fix</a> <code>octo config</code> to properly cut apart strings with : characters in them.</li>
+<li>Rename images built on octohost with different prefix &#39;<a href="https://github.com/octohost/octohost/commit/a48a3fdc8af62448088619059084ac5ea466714a">octoprod</a>&#39; so that you can&#39;t accidentally overwrite a base image.</li>
+<li>Clean up some octo commands so that you can run them as a non-root user.</li>
+<li>Add some more output to deploys so that you can see ENV vars are being added.</li>
+<li>Add <a href="https://github.com/octohost/octohost/commit/0c768f547740665429c41f7eec783ccfc8204931">CONTAINER_NAME as an ENV var</a> inside each container.</li>
+<li>Added <a href="https://github.com/octohost/hhvm">HHVM</a> and <a href="https://github.com/octohost/hack">Hack</a> containers - <a href="https://github.com/octohost/hack-example-site">example site</a></li>
+<li>If you&#39;re using etcd and want to transfer your env vars over, you&#39;ll need to make sure to setup the cluster properly. Take a look <a href="https://github.com/octohost/octohost/blob/master/user-data-file/setup">here</a>.</li>
+</ul>
+<h2>0.9 - ami-da3c52ea</h2><ul>
+<li>Update to Docker 0.9.</li>
+<li>Added <a href="https://github.com/coreos/etcd">etcd</a> for environment variables.</li>
+<li>Addition of <a href="/octo-cli.html">octo config</a> - etcd backed environment variables injected at runtime.</li>
+<li>Removal of container memory stats - the LXC source of those stats was removed as default.</li>
+</ul>
+<h2>0.8.1 - ami-68dcb158</h2><ul>
+<li>Update to Docker 0.8.1.</li>
+<li>Sped up all sorts of containers using nginx and static content.</li>
+<li>Looking at replacing Hipache with nginx. Work in progress - likely not for this release.</li>
+<li>Working on a way to setup, provision and link a persistent data store to your pushed applications with &quot;magic comments&quot; in your Dockerfile. <a href="/data-stores.html">More detail here</a>. <a href="/data-stores-redis.html">Redis</a> and <a href="/data-stores-memcached.html">Memcached</a> are working. Still very experimental.</li>
+<li>Make <code>octo clean</code> <a href="https://github.com/octohost/octohost/commit/ba875ccfb55110409da69c718b7cb94edde3b55c">not remove</a> stopped &quot;_data&quot; containers.</li>
+</ul>
+<h2>0.8 - ami-2a80e31a</h2><ul>
+<li>Add container <a href="https://github.com/octohost/octohost/commit/4e9276d8ea2efa7e0203637ef86f15e5a5fe542d">memory usage</a> to <code>octo status</code> listing.</li>
+<li>Fix Docker running out of file descriptors at <a href="https://github.com/darron/docker-cookbook/commit/3038d964e0afc63745b925f64586c641dee707ea">203 containers</a>.</li>
+<li><a href="https://github.com/darron/docker-cookbook/commit/1872e8302b799147e45c9615c17736264d255084">Add Google DNS</a> to Docker containers.</li>
+<li>Update to <a href="http://blog.docker.io/2014/02/docker-0-8-quality-new-builder-features-btrfs-storage-osx-support/">Docker 0.8</a>.</li>
+<li>Update to newer <a href="https://github.com/octohost/ubuntu-12.0.4-3.8">Base Image</a>.</li>
+<li>Added SSL snake-oil cert as standard. (You need to replace the key and cert in /etc/hipache/)</li>
+<li>Fix octo restart to pass branch along.</li>
+</ul>
+<h2>0.7.6 - ami-78eb8a48</h2><ul>
+<li>Update to Docker 0.7.6.</li>
+<li>Make sure to <a href="https://github.com/octohost/octohost/commit/b5d23f433812f3cf9ce2b5cc19770d668d0889a1">remove Hipache route</a> when <code>octo remove</code> is used.</li>
+<li><a href="https://github.com/octohost/octohost-cookbook/commit/49a6a01528dece21104b7ab7d00c44471073c095">Comment out unused PUBLIC_IP</a> when building Vagrant.</li>
+<li>Added proper <a href="https://github.com/octohost/openjdk7">OpenJDK7</a> and <a href="https://github.com/octohost/play-app">Play Framework</a>.</li>
+<li>Added <a href="https://github.com/octohost/octovagrant">Vagrant build</a> for local development.</li>
+<li>Added <a href="http://octodev.io/">octodev.io</a> wildcard dns for local development.</li>
+<li>Added a more consistent <a href="https://github.com/darron/ubuntu_base-cookbook">Ubuntu base cookbook</a> to the build.</li>
+<li>Added <a href="https://github.com/darron/octobase-cookbook/commit/c32167fe8fb044af52c9689caae0efef7fbac152">sysstat</a> for some basic server metrics.</li>
+<li><a href="https://github.com/darron/ubuntu_base-cookbook/commit/dbd45aefd79d3c67af01fc886ca9c67cf6ee57e8">Properly set en_US.UTF-8</a> as the locale.</li>
+<li>Set <a href="https://github.com/darron/octobase-cookbook/commit/6def19aca5abe4e74fbaeba1c55ff3a20d7f7cf0">ulimit</a> to 64000 open files.</li>
+<li>Remove old init file and properly use <a href="https://github.com/darron/docker-cookbook/commit/77309c615a848173ad4db3ba110e6bfe3fd0979c">/etc/default/docker</a>.</li>
+<li>Remove the extra .git from the <a href="https://github.com/octohost/octohost/commit/83ec3c690faed7f3c9abfbadc0f9e043b384f95b">branch url</a>.</li>
+</ul>
+<h2>0.7.5 - ami-7e29484e</h2><h4>Changes</h4><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/blob/c348c04fdfb00e013be9db15d37728e04fb94b76/CHANGELOG.md">Docker 0.7.5</a></li>
+<li>Added <a href="https://github.com/octohost/perl">Perl</a>, <a href="https://github.com/octohost/perldancer-app">Perl Dancer</a>, <a href="https://github.com/octohost/mojolicious-app">Mojolicious</a> and <a href="https://github.com/octohost/slim">Slim</a>.</li>
+</ul>
+<h2>0.7.3 - ami-48147278</h2><h4>Changes</h4><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/blob/8502ad4ba7b5410eb55f3517a801b33f61b1f625/CHANGELOG.md">Docker 0.7.3</a></li>
+<li>Added <a href="https://github.com/octohost/ruby-2.1.0">Ruby 2.1</a>, <a href="https://github.com/octohost/ramaze">Ramaze</a>, <a href="https://github.com/octohost/erlang">Erlang</a>, and <a href="https://github.com/octohost/sails">Sails.js</a></li>
+</ul>
+<h2>0.7.2 - ami-74690e44</h2><h4>Changes</h4><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/blob/master/CHANGELOG.md">Docker 0.7.2</a></li>
+<li>Built with new Chef based <a href="https://github.com/octohost/octohost-cookbook">octohost-cookbook</a></li>
+</ul>
+<h2>0.7 - ami-2c187c1c</h2><h4>Changes</h4><ul>
+<li>Updates to Node.JS, Ruby and Go base containers. Lots of small updates to frameworks.</li>
+<li>Updated <a href="https://github.com/octohost/ubuntu-12.0.4-3.8">base image</a></li>
+<li>If you push a branch other than master, the domain name is suffixed with -branch.</li>
+<li>If <code>docker build</code> fails, stop the rest of bin/receiver.sh</li>
+<li>Always register Xip.io domain names tied to IP address.</li>
+</ul>
+<h2>0.6 - ami-5c5e3b6c</h2><h4>Changes</h4><ul>
+<li>Update to <a href="https://github.com/dotcloud/docker/blob/v0.7.1/CHANGELOG.md">Docker 0.7.1</a></li>
+<li>Fixed a bug when --force pushing that wouldn&#39;t update the site.</li>
+<li>Added image cleaning to <code>octo clean</code></li>
+<li>Removed Shipyard.</li>
+<li>Updated to Serf 0.3 - fixed bug with event handler discovery.</li>
+<li>Fixed some bugs with octo cli.</li>
+</ul>
+<h2>0.5 - ami-e876ecd8</h2><h4>Changes</h4><ul>
+<li>Update to Docker 0.7</li>
+<li>Add <code>/usr/bin/octo move</code> to pull sites from old octohost and relaunch them.</li>
+<li>Allowing SSH Forwarding and keeping SSH_AUTH_SOCK so that <code>/usr/bin/octo move</code> works.</li>
+<li>Added way to install ssh keys and configure domain name at AMI launch using <a href="https://github.com/octohost/octohost/blob/master/user-data-file/setup">user-data</a>.</li>
+<li>Added <code>/usr/bin/octo remove $site</code> - removes active sites / repos.</li>
+<li>Added <a href="https://github.com/octohost/octohost/blob/master/docs/octo-cli.md">documentation</a> around octo cli.</li>
+<li>Add <code>/usr/bin/octo clean</code> - removes old stopped containers.</li>
+</ul>
+<h2>0.4 - ami-da910bea</h2><h4>Changes</h4><ul>
+<li>Add /usr/bin/octo status|restart - shows status and can reload from an uploaded git repo.</li>
+<li>Update to Serf 0.2.1</li>
+<li>Don&#39;t build without a Dockerfile.</li>
+<li>Add a little better error checking on push.</li>
+<li>Added Lynx.</li>
+</ul>
+<h2>0.3 - ami-06fa6036</h2><h4>Changes</h4><ul>
+<li>Update to Docker 0.6.7.</li>
+<li>Remove apt-get upgrade which was causing Ansible service module requests to fail.</li>
+</ul>
+<h2>0.2 - ami-26d84216</h2><h4>Changes</h4><ul>
+<li>Make curl in receiver always return IPv4.</li>
+</ul>
+<h2>0.1 - Removed.</h2><ul>
+<li>First release.</li>
+</ul>
+      <p>Send us an email at <a href="mailto:octohost@octohost.io">octohost@octohost.io</a>. Follow us on Twitter <a href="https://twitter.com/octohost">@octohost</a>.</p>
+
+      <div class="src"><a href="https://github.com/octohost/www">Website source.</a></div>
+    </div>
+
+  </body>
+</html>

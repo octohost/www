@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    octohost - Simple web focused Docker based mini-PaaS server.
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="/css/octohost.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-12346486-7', 'octohost.io');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+
+  <body class="theme-base-0g">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>octohost</h1>
+      <p class="lead">Simple web focused Docker based mini-PaaS server.</p>
+    </div>
+
+    <div><strong>NOTE:</strong> This project is no longer actively maintained. Use <a href="https://github.com/dokku/dokku">Dokku</a> or <a href="https://github.com/kubernetes/kubernetes">Kubernetes</a>.</div>
+
+    <p>&nbsp;</p>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="/">Home</a></li>
+      <li class="sidebar-nav-item"><a href="/languages.html">Languages and Frameworks</a></li>
+      <li class="sidebar-nav-item"><a href="/documentation.html">Documentation</a></li>
+      <li class="sidebar-nav-item"><a href="/screencast.html">Screencast</a></li>
+      <li class="sidebar-nav-item"><a href="/changelog.html">Changelog</a></li>
+      <li class="sidebar-nav-item"><a href="https://twitter.com/octohost">@octohost</a></li>
+      <li class="sidebar-nav-item"><a href="https://github.com/octohost">Github Project</a></li>
+      <li class="sidebar-nav-item"><a href="https://index.docker.io/u/octohost/">Docker INDEX</a></li>
+    </ul>
+
+    <p>&copy; 2014 - 2106. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <h2>Redis on octohost</h2><h3>NOTE: Released at 0.8.1.</h3><h4>Please send feedback to <a href="mailto:darron@froese.org">Darron</a></h4><p>Adding a Redis data store to an octohost website.</p>
+<p><em>TLDR: 3 git pushes - three linked single use containers.</em></p>
+<p>To make this happen, we will utilize 3 containers in total:</p>
+<ol>
+<li>Data only container to store the Redis dump.rdb file.</li>
+<li>Redis application container that uses the volume from #1 to persist the data between container upgrades.</li>
+<li>The web application container that is linked to the Redis application container.</li>
+</ol>
+<p>We use a simple naming convention to make the linking and volume sharing easier:</p>
+<ol>
+<li>appname_datastore_data - for the data storage container.</li>
+<li>appname_datastore - for the storage daemon.</li>
+<li>appname - for the actual web application that links to the storage daemon.</li>
+</ol>
+<p>This way - we always know what container name we&#39;re looking for when we&#39;re linking them up.</p>
+<p>First, let&#39;s create the <a href="http://www.tech-d.net/2013/12/16/persistent-volumes-with-docker-container-as-volume-pattern/">data</a> <a href="http://www.offermann.us/2013/12/tiny-docker-pieces-loosely-joined.html">only</a> container.</p>
+<p>Here&#39;s the Dockerfile:</p>
+<pre><code>FROM          busybox
+VOLUME        [&quot;/var/lib/redis&quot;]
+CMD           [&quot;true&quot;]
+# NO_HTTP_PROXY
+# ADD_NAME
+</code></pre><p>The last two lines are important, they tell the <a href="https://github.com/octohost/octohost/blob/master/bin/receiver.sh">receiver script</a> on octohost to:</p>
+<ol>
+<li>Do not add an entry into the HTTP proxy - this won&#39;t be accessed from outside the machine.</li>
+<li>Add a name <a href="http://docs.docker.io/en/latest/use/working_with_volumes/">so that we can share the volume</a></li>
+</ol>
+<p>When that&#39;s pushed - you should see this:</p>
+<pre><code>[master] darron@/data: git remote add octo git@server.octohost.io:testing_redis_data.git
+[master] darron@/data: gp octo master
+Warning: remote port forwarding failed for listen port 52698
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Put repo in src format somewhere.
+remote: Building Docker image.
+remote: Base: testing_redis_data
+remote: Nothing running - no need to look for a port.
+remote: Uploading context  2.56 kB
+remote: Uploading context
+remote: Step 0 : FROM          busybox
+remote:  ---&gt; 769b9341d937
+remote: Step 1 : VOLUME        [&quot;/var/lib/redis&quot;]
+remote:  ---&gt; Running in fedc60e7bec5
+remote:  ---&gt; 5a03e36a4866
+remote: Step 2 : CMD           [&quot;true&quot;]
+remote:  ---&gt; Running in f0ba0503a3c6
+remote:  ---&gt; dcb61d3a1cf7
+remote: Successfully built dcb61d3a1cf7
+To git@server.octohost.io:testing_redis_data.git
+ * [new branch]      master -&gt; master
+</code></pre><p>The data container is complete  - let&#39;s add the Redis application container:</p>
+<pre><code>FROM octohost/redis
+WORKDIR /var/lib/redis
+EXPOSE 6379
+# NO_HTTP_PROXY
+# ADD_NAME
+# VOLUMES_FROM
+CMD [&quot;/usr/bin/redis-server&quot;]
+</code></pre><p>Like the data container, there are a few important commented items at the end of the Dockerfile:</p>
+<ol>
+<li>Do not add an entry into the HTTP proxy - this won&#39;t be accessed from outside the machine.</li>
+<li>Add a name <a href="http://docs.docker.io/en/latest/use/working_with_volumes/">so that we can link to this container</a></li>
+<li>Use the data only container we already created as the data storage location.</li>
+</ol>
+<p>Here&#39;s what happens on the push:</p>
+<pre><code>[master] darron@/server: git remote add octo git@server.octohost.io:testing_redis.git
+[master] darron@/server: gp octo master
+Warning: remote port forwarding failed for listen port 52698
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 310 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Put repo in src format somewhere.
+remote: Building Docker image.
+remote: Base: testing_redis
+remote: Nothing running - no need to look for a port.
+remote: Uploading context  2.56 kB
+remote: Uploading context
+remote: Step 0 : FROM octohost/redis
+remote:  ---&gt; 4e23407f3917
+remote: Step 1 : EXPOSE 6379
+remote:  ---&gt; Running in 63558f94ef39
+remote:  ---&gt; 7005893a2eb5
+remote: Step 2 : CMD [&quot;/usr/bin/redis-server&quot;]
+remote:  ---&gt; Running in a85c9ceee561
+remote:  ---&gt; 778ee46b9697
+remote: Successfully built 778ee46b9697
+remote: Port: 49240
+To git@server.octohost.io:testing_redis.git
+ * [new branch]      master -&gt; master
+</code></pre><p>We&#39;ve provisioned a Redis server and it&#39;s ready to go.</p>
+<p>Now let&#39;s link up the final application container - here&#39;s the Dockerfile:</p>
+<pre><code> FROM octohost/ruby-1.9
+ ADD . /srv/www
+ RUN cd /srv/www; bundle install --deployment --without test development
+ # LINK_SERVICE redis
+ EXPOSE 5000
+ CMD [&quot;/usr/local/bin/foreman&quot;,&quot;start&quot;,&quot;-d&quot;,&quot;/srv/www&quot;]
+</code></pre><p>There&#39;s only 1 special comment in this Dockerfile - on push, octohost links this container to the Redis container we created in step 2. Let&#39;s try it:</p>
+<pre><code> [master] darron@/app: git push octo master
+ Warning: remote port forwarding failed for listen port 52698
+ Counting objects: 9, done.
+ Delta compression using up to 8 threads.
+ Compressing objects: 100% (6/6), done.
+ Writing objects: 100% (9/9), 1.09 KiB | 0 bytes/s, done.
+ Total 9 (delta 0), reused 0 (delta 0)
+ remote: Put repo in src format somewhere.
+ remote: Building Docker image.
+ remote: Base: testing
+ remote: Nothing running - no need to look for a port.
+ remote: Uploading context 8.192 kB
+ remote: Uploading context
+ remote: Step 0 : FROM octohost/ruby-1.9
+ remote:  ---&gt; 9bc0da4bad25
+ remote: Step 1 : ADD . /srv/www
+ remote:  ---&gt; e0ebe5e4cb78
+ remote: Step 2 : RUN cd /srv/www; bundle install --deployment --without test development
+ remote:  ---&gt; Running in ee460166f37a
+ remote: Fetching gem metadata from https://rubygems.org/..........
+ remote: Fetching gem metadata from https://rubygems.org/..
+ remote: Installing dotenv (0.9.0)
+ remote: Installing thor (0.18.1)
+ remote: Installing foreman (0.63.0)
+ remote: Installing rack (1.5.2)
+ remote: Installing rack-protection (1.5.2)
+ remote: Installing redis (3.0.6)
+ remote: Installing tilt (1.4.1)
+ remote: Installing sinatra (1.4.4)
+ remote: Using bundler (1.3.5)
+ remote: Your bundle is complete!
+ remote: Gems in the groups test and development were not installed.
+ remote: It was installed into ./vendor/bundle
+ remote:  ---&gt; b947b5e625bc
+ remote: Step 3 : EXPOSE 5000
+ remote:  ---&gt; Running in d144ac1800c5
+ remote:  ---&gt; 3a4c2ffc1538
+ remote: Step 4 : CMD [&quot;/usr/local/bin/foreman&quot;,&quot;start&quot;,&quot;-d&quot;,&quot;/srv/www&quot;]
+ remote:  ---&gt; Running in 1998c2793974
+ remote:  ---&gt; 0e4f5afbad3e
+ remote: Successfully built 0e4f5afbad3e
+ remote: Adding http://testing.54.244.116.169.xip.io
+ remote: Adding http://testing.octohost.io
+ remote: Not killing any containers.
+ remote: Your site is available at: http://testing.54.244.116.169.xip.io
+ remote: Your site is available at: http://testing.octohost.io
+ To git@server.octohost.io:testing.git
+  * [new branch]      master -&gt; master
+</code></pre><p>And that&#39;s it.</p>
+<p>3 pushes - 3 containers:</p>
+<ol>
+<li><a href="https://github.com/octohost/redis_data">Data only container.</a></li>
+<li><a href="https://github.com/octohost/redis_container">Redis container running and using #1 for data storage.</a></li>
+<li><a href="https://github.com/octohost/redis_app">Small Sinatra app linked to the Redis container.</a></li>
+</ol>
+<p>Take a look at the Sinatra code here: <a href="https://github.com/octohost/redis_app">https://github.com/octohost/redis_app</a></p>
+      <p>Send us an email at <a href="mailto:octohost@octohost.io">octohost@octohost.io</a>. Follow us on Twitter <a href="https://twitter.com/octohost">@octohost</a>.</p>
+
+      <div class="src"><a href="https://github.com/octohost/www">Website source.</a></div>
+    </div>
+
+  </body>
+</html>
